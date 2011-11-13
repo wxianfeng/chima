@@ -1,0 +1,61 @@
+<%= form_for(@down_size) do |f| %>
+  <% if @down_size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@down_size.errors.count, "error") %> prohibited this down_size from being saved:</h2>
+
+      <ul>
+      <% @down_size.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chima_id %><br />
+    <%= f.number_field :chima_id %>
+  </div>
+  <div class="field">
+    <%= f.label :chest %><br />
+    <%= f.text_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label :ass %><br />
+    <%= f.text_field :ass %>
+  </div>
+  <div class="field">
+    <%= f.label :leng %><br />
+    <%= f.text_field :leng %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    <%= f.label :crosspiece %><br />
+    <%= f.text_field :crosspiece %>
+  </div>
+  <div class="field">
+    <%= f.label :before_weaves %><br />
+    <%= f.text_field :before_weaves %>
+  </div>
+  <div class="field">
+    <%= f.label :back_weaves %><br />
+    <%= f.text_field :back_weaves %>
+  </div>
+  <div class="field">
+    <%= f.label :knee %><br />
+    <%= f.text_field :knee %>
+  </div>
+  <div class="field">
+    <%= f.label :kukou %><br />
+    <%= f.text_field :kukou %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

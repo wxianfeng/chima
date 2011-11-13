@@ -11,13 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113171101) do
+ActiveRecord::Schema.define(:version => 20111113171545) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "down_sizes", :force => true do |t|
+    t.integer  "chima_id"
+    t.decimal  "chest",         :precision => 10, :scale => 1
+    t.decimal  "ass",           :precision => 10, :scale => 1
+    t.decimal  "leng",          :precision => 10, :scale => 1
+    t.decimal  "total",         :precision => 10, :scale => 1
+    t.decimal  "crosspiece",    :precision => 10, :scale => 1
+    t.decimal  "before_weaves", :precision => 10, :scale => 1
+    t.decimal  "back_weaves",   :precision => 10, :scale => 1
+    t.decimal  "knee",          :precision => 10, :scale => 1
+    t.decimal  "kukou",         :precision => 10, :scale => 1
+    t.decimal  "weight",        :precision => 10, :scale => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "down_sizes", ["chima_id"], :name => "index_down_sizes_on_chima_id"
 
   create_table "models", :force => true do |t|
     t.string   "name"

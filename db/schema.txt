@@ -32,7 +32,7 @@ down_sizes 下衣尺码表
   ass decimal(10,1) 臀围
   leng decimal(10,1) 裤长
   total decimal(10,1) 总档
-  Crosspiece decimal(10,1) 横档
+  crosspiece decimal(10,1) 横档
   before_weaves decimal(10,1) 前浪
   back_weaves decimal(10,1) 后浪
   knee decimal(10,1) 膝围

@@ -1,0 +1,43 @@
+<h1>Listing down_sizes</h1>
+
+<table>
+  <tr>
+    <th>Chima</th>
+    <th>Chest</th>
+    <th>Ass</th>
+    <th>Leng</th>
+    <th>Total</th>
+    <th>Crosspiece</th>
+    <th>Before weaves</th>
+    <th>Back weaves</th>
+    <th>Knee</th>
+    <th>Kukou</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @down_sizes.each do |down_size| %>
+  <tr>
+    <td><%= down_size.chima_id %></td>
+    <td><%= down_size.chest %></td>
+    <td><%= down_size.ass %></td>
+    <td><%= down_size.leng %></td>
+    <td><%= down_size.total %></td>
+    <td><%= down_size.crosspiece %></td>
+    <td><%= down_size.before_weaves %></td>
+    <td><%= down_size.back_weaves %></td>
+    <td><%= down_size.knee %></td>
+    <td><%= down_size.kukou %></td>
+    <td><%= down_size.weight %></td>
+    <td><%= link_to 'Show', down_size %></td>
+    <td><%= link_to 'Edit', edit_down_size_path(down_size) %></td>
+    <td><%= link_to 'Destroy', down_size, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Down size', new_down_size_path %>
