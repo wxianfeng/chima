@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Brand:</b>
+  <%= @size.brand_id %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @size.gender %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @size.where %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @size.category_id %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @size.model_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_size_path(@size) %> |
+<%= link_to 'Back', sizes_path %>

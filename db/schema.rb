@@ -11,12 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113163651) do
+ActiveRecord::Schema.define(:version => 20111113165814) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "models", :force => true do |t|
+    t.string   "name"
+    t.integer  "brand_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "models", ["brand_id"], :name => "index_models_on_brand_id"
+
+  create_table "sizes", :force => true do |t|
+    t.integer  "brand_id"
+    t.integer  "gender"
+    t.integer  "where"
+    t.integer  "category_id"
+    t.integer  "model_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sizes", ["brand_id"], :name => "index_sizes_on_brand_id"
+  add_index "sizes", ["category_id"], :name => "index_sizes_on_category_id"
+  add_index "sizes", ["model_id"], :name => "index_sizes_on_model_id"
 
 end

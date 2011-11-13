@@ -1,0 +1,31 @@
+<h1>Listing sizes</h1>
+
+<table>
+  <tr>
+    <th>Brand</th>
+    <th>Gender</th>
+    <th>Where</th>
+    <th>Category</th>
+    <th>Model</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sizes.each do |size| %>
+  <tr>
+    <td><%= size.brand_id %></td>
+    <td><%= size.gender %></td>
+    <td><%= size.where %></td>
+    <td><%= size.category_id %></td>
+    <td><%= size.model_id %></td>
+    <td><%= link_to 'Show', size %></td>
+    <td><%= link_to 'Edit', edit_size_path(size) %></td>
+    <td><%= link_to 'Destroy', size, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Size', new_size_path %>

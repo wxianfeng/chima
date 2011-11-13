@@ -1,4 +1,8 @@
 Chima::Application.routes.draw do
+  resources :sizes
+
+  resources :models
+
   resources :brands
 
   # The priority is based upon order of creation:
