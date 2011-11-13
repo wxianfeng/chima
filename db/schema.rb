@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113165814) do
+ActiveRecord::Schema.define(:version => 20111113171101) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -41,5 +41,28 @@ ActiveRecord::Schema.define(:version => 20111113165814) do
   add_index "sizes", ["brand_id"], :name => "index_sizes_on_brand_id"
   add_index "sizes", ["category_id"], :name => "index_sizes_on_category_id"
   add_index "sizes", ["model_id"], :name => "index_sizes_on_model_id"
+
+  create_table "up_sizes", :force => true do |t|
+    t.integer  "chima_id"
+    t.decimal  "front_length", :precision => 10, :scale => 1
+    t.decimal  "back_length",  :precision => 10, :scale => 1
+    t.decimal  "chest",        :precision => 10, :scale => 1
+    t.decimal  "waistline",    :precision => 10, :scale => 1
+    t.decimal  "lap",          :precision => 10, :scale => 1
+    t.decimal  "shoulder",     :precision => 10, :scale => 1
+    t.decimal  "sleeve",       :precision => 10, :scale => 1
+    t.decimal  "cage",         :precision => 10, :scale => 1
+    t.decimal  "fat",          :precision => 10, :scale => 1
+    t.decimal  "cuff",         :precision => 10, :scale => 1
+    t.decimal  "short_sleeve", :precision => 10, :scale => 1
+    t.decimal  "neck",         :precision => 10, :scale => 1
+    t.decimal  "colby",        :precision => 10, :scale => 1
+    t.decimal  "sleeve_width", :precision => 10, :scale => 1
+    t.decimal  "weight",       :precision => 10, :scale => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "up_sizes", ["chima_id"], :name => "index_up_sizes_on_chima_id"
 
 end

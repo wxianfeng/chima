@@ -1,0 +1,53 @@
+<h1>Listing up_sizes</h1>
+
+<table>
+  <tr>
+    <th>Chima</th>
+    <th>Front length</th>
+    <th>Back length</th>
+    <th>Chest</th>
+    <th>Waistline</th>
+    <th>Lap</th>
+    <th>Shoulder</th>
+    <th>Sleeve</th>
+    <th>Cage</th>
+    <th>Fat</th>
+    <th>Cuff</th>
+    <th>Short sleeve</th>
+    <th>Neck</th>
+    <th>Colby</th>
+    <th>Sleeve width</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @up_sizes.each do |up_size| %>
+  <tr>
+    <td><%= up_size.chima_id %></td>
+    <td><%= up_size.front_length %></td>
+    <td><%= up_size.back_length %></td>
+    <td><%= up_size.chest %></td>
+    <td><%= up_size.waistline %></td>
+    <td><%= up_size.lap %></td>
+    <td><%= up_size.shoulder %></td>
+    <td><%= up_size.sleeve %></td>
+    <td><%= up_size.cage %></td>
+    <td><%= up_size.fat %></td>
+    <td><%= up_size.cuff %></td>
+    <td><%= up_size.short_sleeve %></td>
+    <td><%= up_size.neck %></td>
+    <td><%= up_size.colby %></td>
+    <td><%= up_size.sleeve_width %></td>
+    <td><%= up_size.weight %></td>
+    <td><%= link_to 'Show', up_size %></td>
+    <td><%= link_to 'Edit', edit_up_size_path(up_size) %></td>
+    <td><%= link_to 'Destroy', up_size, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Up size', new_up_size_path %>

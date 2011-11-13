@@ -12,16 +12,16 @@ up_sizes 上衣尺码表
   front_length decimal(10,1) 前长
   back_length decimal(10,1) 后长
   chest decimal(10,1) 胸围
-  Waistline decimal(10,1) 腰围
+  waistline decimal(10,1) 腰围
   lap decimal(10,1) 下摆
-  Shoulder decimal(10,1) 肩宽
-  Sleeve decimal(10,1) 袖长
+  shoulder decimal(10,1) 肩宽
+  sleeve decimal(10,1) 袖长
   cage decimal(10,1) 袖笼
   fat decimal(10,1) 袖肥
   cuff decimal(10,1) 袖口
   short_sleeve decimal(10,1) 短袖长
   neck decimal(10,1) 领围
-  Colby decimal(10,1) 领高
+  colby decimal(10,1) 领高
   sleeve_width decimal(10,1) 袖宽
   weight decimal(10,1) 重量
 

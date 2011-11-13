@@ -1,4 +1,6 @@
 Chima::Application.routes.draw do
+  resources :up_sizes
+
   resources :sizes
 
   resources :models

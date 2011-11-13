@@ -1,0 +1,81 @@
+<%= form_for(@up_size) do |f| %>
+  <% if @up_size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@up_size.errors.count, "error") %> prohibited this up_size from being saved:</h2>
+
+      <ul>
+      <% @up_size.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :chima_id %><br />
+    <%= f.number_field :chima_id %>
+  </div>
+  <div class="field">
+    <%= f.label :front_length %><br />
+    <%= f.text_field :front_length %>
+  </div>
+  <div class="field">
+    <%= f.label :back_length %><br />
+    <%= f.text_field :back_length %>
+  </div>
+  <div class="field">
+    <%= f.label :chest %><br />
+    <%= f.text_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label :waistline %><br />
+    <%= f.text_field :waistline %>
+  </div>
+  <div class="field">
+    <%= f.label :lap %><br />
+    <%= f.text_field :lap %>
+  </div>
+  <div class="field">
+    <%= f.label :shoulder %><br />
+    <%= f.text_field :shoulder %>
+  </div>
+  <div class="field">
+    <%= f.label :sleeve %><br />
+    <%= f.text_field :sleeve %>
+  </div>
+  <div class="field">
+    <%= f.label :cage %><br />
+    <%= f.text_field :cage %>
+  </div>
+  <div class="field">
+    <%= f.label :fat %><br />
+    <%= f.text_field :fat %>
+  </div>
+  <div class="field">
+    <%= f.label :cuff %><br />
+    <%= f.text_field :cuff %>
+  </div>
+  <div class="field">
+    <%= f.label :short_sleeve %><br />
+    <%= f.text_field :short_sleeve %>
+  </div>
+  <div class="field">
+    <%= f.label :neck %><br />
+    <%= f.text_field :neck %>
+  </div>
+  <div class="field">
+    <%= f.label :colby %><br />
+    <%= f.text_field :colby %>
+  </div>
+  <div class="field">
+    <%= f.label :sleeve_width %><br />
+    <%= f.text_field :sleeve_width %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
