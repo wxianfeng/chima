@@ -1,13 +1,15 @@
 class ModelsController < ApplicationController
-  # GET /models
-  # GET /models.json
-  def index
-    @models = Model.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @models }
+  def index
+    if params[:brand_id]
+      @models = Model.where(:brand_id=>params[:brand_id])
+      opt = {}
+      @models.each do |model|
+        opt[model.id] = model.name
+      end
+      render :json => { status: 'ok',options: opt  } and return
     end
+    @models = Model.all
   end
 
   # GET /models/1

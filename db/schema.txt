@@ -1,16 +1,8 @@
 数据库结构
 
-sizes 尺码表
-  brand_id int 品牌id
-  gender int 1 男装  ， 2 女装
-  where int 1 上衣,2下衣,3 套装
-  category_id int 分类ID
-  model_id int 型号id
-
 up_sizes 上衣尺码表
   brand_id int 品牌id
   gender int 1 男装  ， 2 女装
-  where int 1 上衣,2下衣,3 套装
   category_id int 分类ID
   model_id int 型号id
   front_length decimal(10,1) 前长
@@ -33,7 +25,6 @@ up_sizes 上衣尺码表
 down_sizes 下衣尺码表
   brand_id int 品牌id
   gender int 1 男装  ， 2 女装
-  where int 1 上衣,2下衣,3 套装
   category_id int 分类ID
   model_id int 型号id
   chest decimal(10,1) 腰围
