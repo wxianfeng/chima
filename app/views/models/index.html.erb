@@ -1,9 +1,9 @@
-<h1>Listing models</h1>
+<h1>型号列表</h1>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Brand</th>
+    <th>型号名称</th>
+    <th>品牌</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,14 +12,14 @@
 <% @models.each do |model| %>
   <tr>
     <td><%= model.name %></td>
-    <td><%= model.brand_id %></td>
-    <td><%= link_to 'Show', model %></td>
-    <td><%= link_to 'Edit', edit_model_path(model) %></td>
-    <td><%= link_to 'Destroy', model, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= model.brand.try(:name) %></td>
+    <td><%= link_to '显示', model %></td>
+    <td><%= link_to '编辑', edit_model_path(model) %></td>
+    <td><%= link_to '删除', model, confirm: '确定删除?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Model', new_model_path %>
+<%= link_to '新型号', new_model_path %>

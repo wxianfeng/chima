@@ -1,15 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <b>Name:</b>
+  <b>型号名称:</b>
   <%= @model.name %>
 </p>
 
 <p>
-  <b>Brand:</b>
-  <%= @model.brand_id %>
+  <b>品牌:</b>
+  <%= @model.brand.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_model_path(@model) %> |
-<%= link_to 'Back', models_path %>
+<%= link_to '编辑', edit_model_path(@model) %> |
+<%= link_to '返回', models_path %>

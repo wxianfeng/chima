@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113171545) do
+ActiveRecord::Schema.define(:version => 20111115164943) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(:version => 20111113171545) do
     t.decimal  "weight",        :precision => 10, :scale => 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "gender"
+    t.integer  "where"
+    t.integer  "category_id"
+    t.integer  "model_id"
   end
 
   add_index "down_sizes", ["chima_id"], :name => "index_down_sizes_on_chima_id"
@@ -45,20 +50,6 @@ ActiveRecord::Schema.define(:version => 20111113171545) do
   end
 
   add_index "models", ["brand_id"], :name => "index_models_on_brand_id"
-
-  create_table "sizes", :force => true do |t|
-    t.integer  "brand_id"
-    t.integer  "gender"
-    t.integer  "where"
-    t.integer  "category_id"
-    t.integer  "model_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sizes", ["brand_id"], :name => "index_sizes_on_brand_id"
-  add_index "sizes", ["category_id"], :name => "index_sizes_on_category_id"
-  add_index "sizes", ["model_id"], :name => "index_sizes_on_model_id"
 
   create_table "up_sizes", :force => true do |t|
     t.integer  "chima_id"
@@ -79,6 +70,11 @@ ActiveRecord::Schema.define(:version => 20111113171545) do
     t.decimal  "weight",       :precision => 10, :scale => 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "brand_id"
+    t.integer  "gender"
+    t.integer  "where"
+    t.integer  "category_id"
+    t.integer  "model_id"
   end
 
   add_index "up_sizes", ["chima_id"], :name => "index_up_sizes_on_chima_id"

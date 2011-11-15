@@ -1,12 +1,12 @@
-<h1>Listing sizes</h1>
+<h1>尺码列表</h1>
 
 <table>
   <tr>
-    <th>Brand</th>
-    <th>Gender</th>
-    <th>Where</th>
-    <th>Category</th>
-    <th>Model</th>
+    <th>品牌</th>
+    <th>性别</th>
+    <th>上衣|上衣|套装</th>
+    <th>衣服分类</th>
+    <th>型号</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,13 +19,13 @@
     <td><%= size.where %></td>
     <td><%= size.category_id %></td>
     <td><%= size.model_id %></td>
-    <td><%= link_to 'Show', size %></td>
-    <td><%= link_to 'Edit', edit_size_path(size) %></td>
-    <td><%= link_to 'Destroy', size, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '显示', size %></td>
+    <td><%= link_to '编辑', edit_size_path(size) %></td>
+    <td><%= link_to '删除', size, confirm: '确定删除?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Size', new_size_path %>
+<%= link_to '新尺码', new_size_path %>

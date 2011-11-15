@@ -1,8 +1,8 @@
-<h1>Listing brands</h1>
+<h1>品牌列表</h1>
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>名称</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,13 +11,13 @@
 <% @brands.each do |brand| %>
   <tr>
     <td><%= brand.name %></td>
-    <td><%= link_to 'Show', brand %></td>
-    <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-    <td><%= link_to 'Destroy', brand, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to '显示', brand %></td>
+    <td><%= link_to '编辑', edit_brand_path(brand) %></td>
+    <td><%= link_to '删除', brand, confirm: '确定删除吗?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to '新品牌', new_brand_path %>
