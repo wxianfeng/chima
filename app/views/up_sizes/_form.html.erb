@@ -91,28 +91,10 @@
       // http://www.electrictoolbox.com/jquery-add-option-select-jquery/
       if (gender == 1){
         var newOptions = <%= raw UpSize::M_TYPES.to_json %>;
-        if($select.prop) {
-          var options = $select.prop('options');
-        }
-        else {
-          var options = $select.attr('options');
-        }
-        $('option', $select).remove();
-        $.each(newOptions, function(val, text) {
-          options[options.length] = new Option(text, val);
-        });
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
       }else{
         var newOptions = <%= raw UpSize::W_TYPES.to_json %>;
-        if($select.prop) {
-          var options = $select.prop('options');
-        }
-        else {
-          var options = $select.attr('options');
-        }
-        $('option', $select).remove();
-        $.each(newOptions, function(val, text) {
-          options[options.length] = new Option(text, val);
-        });
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
       }
     });
 
@@ -126,16 +108,7 @@
           if (data.status == 'ok'){
             var newOptions = data.options;
             var $select = $("#up_size_model_id");
-            if($select.prop) {
-              var options = $select.prop('options');
-            }
-            else {
-              var options = $select.attr('options');
-            }
-            $('option', $select).remove();
-            $.each(newOptions, function(val, text) {
-              options[options.length] = new Option(text, val);
-            });
+            Chima.Admin.changeUpSizeCategory($select, newOptions);
           }
         }
       })

@@ -3,8 +3,8 @@ Chima::Application.routes.draw do
   resources :down_sizes
   resources :up_sizes do
     collection {
-      get :batch_new
-      post :batch_create
+      get :new_batch
+      post :create_batch
     }
   end
   resources :sizes

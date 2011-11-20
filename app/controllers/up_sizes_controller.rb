@@ -69,8 +69,6 @@ class UpSizesController < ApplicationController
     end
   end
 
-  # DELETE /up_sizes/1
-  # DELETE /up_sizes/1.json
   def destroy
     @up_size = UpSize.find(params[:id])
     @up_size.destroy
@@ -81,8 +79,15 @@ class UpSizesController < ApplicationController
     end
   end
 
-  def batch_new
-
+  def new_batch
   end
-  
+
+  def create_batch
+    params[:up_sizes].each do |up_size|
+      record = UpSize.new(up_size)
+      record.save
+    end
+    redirect_to up_sizes_path
+  end
+
 end
