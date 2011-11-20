@@ -81,7 +81,7 @@ class UpSize < ActiveRecord::Base
   }
 
   def human_gender
-    if gender == Gender::W
+    if gender == Gender::M
       "男"
     else
       "女"

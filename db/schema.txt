@@ -43,5 +43,6 @@ brands 品牌表
 
 models 型号表
   brand_id int 品牌id
-  name varchar 型号
+  name varchar 型号名称
+  category string 类别 (up: 上衣,down: 下衣)
 

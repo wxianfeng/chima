@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115171404) do
+ActiveRecord::Schema.define(:version => 20111120133950) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20111115171404) do
     t.integer  "brand_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "category"
   end
 
   add_index "models", ["brand_id"], :name => "index_models_on_brand_id"
