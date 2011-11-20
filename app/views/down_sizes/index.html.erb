@@ -1,43 +1,49 @@
-<h1>Listing down_sizes</h1>
+<h1>下衣尺码列表</h1>
 
 <table>
   <tr>
-    <th>Chima</th>
-    <th>Chest</th>
-    <th>Ass</th>
-    <th>Leng</th>
-    <th>Total</th>
-    <th>Crosspiece</th>
-    <th>Before weaves</th>
-    <th>Back weaves</th>
-    <th>Knee</th>
-    <th>Kukou</th>
-    <th>Weight</th>
+    <th>品牌</th>
+    <th>性别</th>
+    <th>种类</th>
+    <th>型号</th>
+    <th>腰围</th>
+    <th>臀围</th>
+    <th>裤长</th>
+    <th>总档</th>
+    <th>横档</th>
+    <th>前浪</th>
+    <th>后浪</th>
+    <th>膝围</th>
+    <th>裤口</th>
+    <th>重量</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @down_sizes.each do |down_size| %>
-  <tr>
-    <td><%= down_size.chima_id %></td>
-    <td><%= down_size.chest %></td>
-    <td><%= down_size.ass %></td>
-    <td><%= down_size.leng %></td>
-    <td><%= down_size.total %></td>
-    <td><%= down_size.crosspiece %></td>
-    <td><%= down_size.before_weaves %></td>
-    <td><%= down_size.back_weaves %></td>
-    <td><%= down_size.knee %></td>
-    <td><%= down_size.kukou %></td>
-    <td><%= down_size.weight %></td>
-    <td><%= link_to 'Show', down_size %></td>
-    <td><%= link_to 'Edit', edit_down_size_path(down_size) %></td>
-    <td><%= link_to 'Destroy', down_size, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <% @down_sizes.each do |down_size| %>
+    <tr>
+      <td><%= down_size.brand.try(:name) %></td>
+      <td><%= down_size.human_gender %></td>
+      <td><%= down_size.human_category %></td>
+      <td><%= down_size.model.try(:name) %></td>
+      <td><%= down_size.chest %></td>
+      <td><%= down_size.ass %></td>
+      <td><%= down_size.leng %></td>
+      <td><%= down_size.total %></td>
+      <td><%= down_size.crosspiece %></td>
+      <td><%= down_size.before_weaves %></td>
+      <td><%= down_size.back_weaves %></td>
+      <td><%= down_size.knee %></td>
+      <td><%= down_size.kukou %></td>
+      <td><%= down_size.weight %></td>
+      <td><%= link_to '显示', down_size %></td>
+      <td><%= link_to '编辑', edit_down_size_path(down_size) %></td>
+      <td><%= link_to '删除', down_size, confirm: '确认删除?', method: :delete %></td>
+    </tr>
+  <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Down size', new_down_size_path %>
+<%= link_to '新下衣尺寸', new_down_size_path %>
