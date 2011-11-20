@@ -1,15 +1,5 @@
 <%= form_for(@up_size) do |f| %>
-  <% if @up_size.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@up_size.errors.count, "error") %> prohibited this up_size from being saved:</h2>
-
-      <ul>
-        <% @up_size.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @up_size %>
 
   <div class="field">
     <%= f.label "品牌" %><br />
@@ -25,7 +15,7 @@
   </div>
   <div class="field">
     <%= f.label "型号" %><br />
-    <%= f.select :model_id , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id)),:id,:name) %>
+    <%= f.select :model_id , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %>
   </div>
   <div class="field">
     <%= f.label "前长" %><br />

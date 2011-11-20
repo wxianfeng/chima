@@ -80,4 +80,9 @@ class UpSizesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def batch_new
+
+  end
+  
 end
