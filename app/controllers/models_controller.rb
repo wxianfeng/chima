@@ -7,7 +7,12 @@ class ModelsController < ApplicationController
       @models.each do |model|
         opt[model.id] = model.name
       end
-      render :json => { status: 'ok',options: opt  } and return
+      @sizes = Size.where(:brand_id=>params[:brand_id])
+      size_opt = {}
+      @sizes.each do |size|
+        size_opt[size.id] = size.name
+      end
+      render :json => { status: 'ok',options: opt,size_options: size_opt  } and return
     end
     @models = Model.all
   end

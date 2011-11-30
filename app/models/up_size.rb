@@ -3,6 +3,7 @@ class UpSize < ActiveRecord::Base
 
   belongs_to :model
   belongs_to :brand
+  belongs_to :size
 
   module Gender
     M = 1

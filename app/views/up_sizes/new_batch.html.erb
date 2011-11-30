@@ -8,6 +8,7 @@
       <td><%= select_tag "up_sizes[][gender]" , options_for_select([["男",UpSize::Gender::M],['女',UpSize::Gender::W]]) %></td>
       <td><%= select_tag "up_sizes[][category_id]" , options_for_select(UpSize::M_TYPES.invert) %></td>
       <td><%= select_tag "up_sizes[][model_id]" , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][size_id]" , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %></td>
       <td><%= text_field_tag "up_sizes[][front_length]" , nil , :size=>4 %></td>
       <td><%= text_field_tag "up_sizes[][back_length]", nil , :size=>4 %></td>
       <td><%= text_field_tag "up_sizes[][chest]", nil , :size=>4 %></td>
@@ -31,6 +32,7 @@
       <td><%= select_tag "up_sizes[][gender]" , options_for_select([["男",UpSize::Gender::M],['女',UpSize::Gender::W]]) %></td>
       <td><%= select_tag "up_sizes[][category_id]" , options_for_select(UpSize::M_TYPES.invert) %></td>
       <td><%= select_tag "up_sizes[][model_id]" , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][size_id]" , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %></td>
       <td><%= text_field_tag "up_sizes[][front_length]" , nil , :size=>4 %></td>
       <td><%= text_field_tag "up_sizes[][back_length]", nil , :size=>4 %></td>
       <td><%= text_field_tag "up_sizes[][chest]", nil , :size=>4 %></td>
@@ -80,8 +82,11 @@
         success: function(data){
           if (data.status == 'ok'){
             var newOptions = data.options;
+            var sizeOptions = data.size_options;
             var $select = $this.parent().next().next().next().find("select");
+            var $sizeSelect = $this.parent().next().next().next().next().find("select");
             Chima.Admin.changeUpSizeCategory($select, newOptions);
+            Chima.Admin.changeUpSizeCategory($sizeSelect, sizeOptions);
           }
         }
       })

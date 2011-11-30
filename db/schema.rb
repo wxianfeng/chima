@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111120133950) do
+ActiveRecord::Schema.define(:version => 20111130171353) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111120133950) do
     t.integer  "gender"
     t.integer  "category_id"
     t.integer  "model_id"
+    t.integer  "size_id"
   end
 
   add_index "down_sizes", ["chima_id"], :name => "index_down_sizes_on_chima_id"
@@ -50,6 +51,14 @@ ActiveRecord::Schema.define(:version => 20111120133950) do
   end
 
   add_index "models", ["brand_id"], :name => "index_models_on_brand_id"
+
+  create_table "sizes", :force => true do |t|
+    t.integer  "brand_id"
+    t.string   "name"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "up_sizes", :force => true do |t|
     t.integer  "chima_id"
@@ -74,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20111120133950) do
     t.integer  "gender"
     t.integer  "category_id"
     t.integer  "model_id"
+    t.integer  "size_id"
   end
 
   add_index "up_sizes", ["chima_id"], :name => "index_up_sizes_on_chima_id"

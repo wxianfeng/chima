@@ -18,6 +18,10 @@
     <%= f.select :model_id , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::DOWN),:id,:name) %>
   </div>
   <div class="field">
+    <%= f.label "尺码" %><br />
+    <%= f.select :size_id , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::DOWN),:id,:name) %>
+  </div>
+  <div class="field">
     <%= f.label "腰围" %><br />
     <%= f.text_field :chest %>
   </div>
@@ -88,8 +92,11 @@
         success: function(data){
           if (data.status == 'ok'){
             var newOptions = data.options;
+            var sizeOptions = data.size_options;
             var $select = $("#down_size_model_id");
+            var $sizeSelect = $("#down_size_size_id");
             Chima.Admin.changeUpSizeCategory($select, newOptions);
+            Chima.Admin.changeUpSizeCategory($sizeSelect, sizeOptions);
           }
         }
       })

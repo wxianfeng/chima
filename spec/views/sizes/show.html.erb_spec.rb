@@ -4,10 +4,8 @@ describe "sizes/show.html.erb" do
   before(:each) do
     @size = assign(:size, stub_model(Size,
       :brand_id => 1,
-      :gender => 1,
-      :where => 1,
-      :category_id => 1,
-      :model_id => 1
+      :name => "Name",
+      :category => "Category"
     ))
   end
 
@@ -16,12 +14,8 @@ describe "sizes/show.html.erb" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/1/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
+    rendered.should match(/Name/)
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
+    rendered.should match(/Category/)
   end
 end

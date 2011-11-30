@@ -1,37 +1,19 @@
 <%= form_for(@size) do |f| %>
-  <% if @size.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@size.errors.count, "error") %> prohibited this size from being saved:</h2>
-
-      <ul>
-      <% @size.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for @size %>
 
   <div class="field">
-    <%= f.label :brand_id %><br />
-    <%= f.number_field :brand_id %>
+    <%= f.label "品牌" %><br />
+    <%= f.select :brand_id , options_from_collection_for_select(Brand.all,:id,:name) %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.number_field :gender %>
+    <%= f.label "名称" %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :where %><br />
-    <%= f.number_field :where %>
-  </div>
-  <div class="field">
-    <%= f.label :category_id %><br />
-    <%= f.number_field :category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :model_id %><br />
-    <%= f.number_field :model_id %>
+    <%= f.label "分类" %><br />
+    <%= f.select :category , options_for_select([["上衣",Model::Category::UP],["下衣",Model::Category::DOWN]]) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "提交" %>
   </div>
 <% end %>

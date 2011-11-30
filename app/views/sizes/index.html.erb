@@ -1,12 +1,10 @@
-<h1>尺寸列表</h1>
+<h1>尺码列表</h1>
 
 <table>
   <tr>
     <th>品牌</th>
-    <th>性别</th>
-    <th>上衣|上衣|套装</th>
-    <th>衣服分类</th>
-    <th>型号</th>
+    <th>名称</th>
+    <th>分类</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,11 +12,9 @@
 
 <% @sizes.each do |size| %>
   <tr>
-    <td><%= size.brand_id %></td>
-    <td><%= size.gender %></td>
-    <td><%= size.where %></td>
-    <td><%= size.category_id %></td>
-    <td><%= size.model_id %></td>
+    <td><%= size.brand.name %></td>
+    <td><%= size.name %></td>
+    <td><%= size.human_category %></td>
     <td><%= link_to '显示', size %></td>
     <td><%= link_to '编辑', edit_size_path(size) %></td>
     <td><%= link_to '删除', size, confirm: '确定删除?', method: :delete %></td>
@@ -28,4 +24,4 @@
 
 <br />
 
-<%= link_to '新尺寸', new_size_path %>
+<%= link_to '新建尺码', new_size_path %>

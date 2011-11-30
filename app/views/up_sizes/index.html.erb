@@ -6,6 +6,7 @@
     <th>性别</th>
     <th>种类</th>
     <th>型号</th>
+    <th>尺码</th>
     <th>前长</th>
     <th>后长</th>
     <th>胸围</th>
@@ -32,6 +33,7 @@
     <td><%= up_size.human_gender %></td>
     <td><%= up_size.human_category %></td>
     <td><%= up_size.model.try(:name) %></td>
+    <td><%= up_size.size.try(:name) %></td>
     <td><%= up_size.front_length %></td>
     <td><%= up_size.back_length %></td>
     <td><%= up_size.chest %></td>
