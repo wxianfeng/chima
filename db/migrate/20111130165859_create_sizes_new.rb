@@ -1,4 +1,4 @@
-class CreateSizes < ActiveRecord::Migration
+class CreateSizesNew < ActiveRecord::Migration
   def change
     create_table :sizes do |t|
       t.integer :brand_id
