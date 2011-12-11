@@ -1,0 +1,7 @@
+zh_CN:
+  activerecord:
+    attributes:
+      model:
+        name: 型号名称
+      size:
+        name: "尺码名称"

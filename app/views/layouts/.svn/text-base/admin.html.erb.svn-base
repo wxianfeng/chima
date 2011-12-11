@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chima</title>
+    <%= stylesheet_link_tag    "admin" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <ul>
+      <li><%= link_to "品牌" , admin_brands_path %></li>
+      <li><%= link_to "型号" , admin_models_path %></li>
+      <li><%= link_to "尺码" , admin_sizes_path %></li>
+      <li><%= link_to "货号" , admin_items_path %></li>
+      <li><%= link_to "上衣尺寸" , admin_up_sizes_path %></li>
+      <li><%= link_to "下衣尺寸" , admin_down_sizes_path %></li>
+    </ul>
+
+    <%= yield %>
+
+  </body>
+</html>

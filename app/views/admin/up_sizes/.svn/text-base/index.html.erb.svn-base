@@ -1,0 +1,66 @@
+<%= link_to '新的上衣尺寸', new_admin_up_size_path %> |
+<%= link_to '批量输入', new_batch_admin_up_sizes_path %>
+
+<h1>上衣尺寸列表</h1>
+
+<table>
+  <tr>
+    <th>品牌</th>
+    <th>性别</th>
+    <th>种类</th>
+    <th>型号</th>
+    <th>尺码</th>
+    <th>货号</th>
+    <th>前长</th>
+    <th>后长</th>
+    <th>胸围</th>
+    <th>腰围</th>
+    <th>下摆</th>
+    <th>肩宽</th>
+    <th>袖长</th>
+    <th>袖笼</th>
+    <th>袖肥</th>
+    <th>袖口</th>
+    <th>短袖长</th>
+    <th>领围</th>
+    <th>领高</th>
+    <th>袖宽</th>
+    <th>重量</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @up_sizes.each do |up_size| %>
+  <tr>
+    <td><%= up_size.brand.try(:name) %></td>
+    <td><%= up_size.human_gender %></td>
+    <td><%= up_size.human_category %></td>
+    <td><%= up_size.model.try(:name) %></td>
+    <td><%= up_size.size.try(:name) %></td>
+    <td><%= up_size.item.try(:name) %></td>
+    <td><%= up_size.front_length %></td>
+    <td><%= up_size.back_length %></td>
+    <td><%= up_size.chest %></td>
+    <td><%= up_size.waistline %></td>
+    <td><%= up_size.lap %></td>
+    <td><%= up_size.shoulder %></td>
+    <td><%= up_size.sleeve %></td>
+    <td><%= up_size.cage %></td>
+    <td><%= up_size.fat %></td>
+    <td><%= up_size.cuff %></td>
+    <td><%= up_size.short_sleeve %></td>
+    <td><%= up_size.neck %></td>
+    <td><%= up_size.colby %></td>
+    <td><%= up_size.sleeve_width %></td>
+    <td><%= up_size.weight %></td>
+    <td><%= link_to '显示', [:admin,up_size] %></td>
+    <td><%= link_to '修改', edit_admin_up_size_path(up_size) %></td>
+    <td><%= link_to '删除', [:admin,up_size], confirm: '确认删除?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

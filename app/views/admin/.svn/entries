@@ -1,0 +1,53 @@
+10
+
+dir
+608
+svn://wxianfeng.com/chima/app/views/admin
+svn://wxianfeng.com
+
+
+
+2011-12-11T04:53:49.745354Z
+608
+wxianfeng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+c9c43223-3a15-4248-947a-f546d6373bce
+
+
+
+
+
+
+0
+
+brands
+dir
+
+down_sizes
+dir
+
+items
+dir
+
+models
+dir
+
+sizes
+dir
+
+up_sizes
+dir
+

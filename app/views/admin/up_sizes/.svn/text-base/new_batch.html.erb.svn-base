@@ -1,0 +1,100 @@
+<%= form_tag create_batch_admin_up_sizes_path do %>
+  <table id="models">
+    <tr><td>品牌</td><td>性别</td><td>种类</td><td>型号</td><td>尺码</td><td>货号</td><td>前长</td><td>后长</td><td>胸围</td><td>腰围</td><td>下摆</td><td>肩宽</td><td>袖长</td><td>袖笼</td><td>袖肥</td><td>袖口</td><td>短袖长</td><td>领围</td><td>领高</td><td>袖宽</td><td>重量</td>
+      <td><a href="javascript:;" onclick="Chima.Admin.newModel();" class="red">增加</a></td>
+    </tr>
+    <tr>
+      <td><%= select_tag "up_sizes[][brand_id]" , options_from_collection_for_select(Brand.all,:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][gender]" , options_for_select([["男",UpSize::Gender::M],['女',UpSize::Gender::W]]) %></td>
+      <td><%= select_tag "up_sizes[][category_id]" , options_for_select(UpSize::M_TYPES.invert) %></td>
+      <td><%= select_tag "up_sizes[][model_id]" , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][size_id]" , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][item_id]" , options_from_collection_for_select(Item.where(:brand_id=>Brand.first.try(:id),:category=>Item::Category::UP),:id,:name) %></td>
+      <td><%= text_field_tag "up_sizes[][front_length]" , nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][back_length]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][chest]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][waistline]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][lap]" , nil , :size=>4%></td>
+      <td><%= text_field_tag "up_sizes[][shoulder]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][sleeve]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][cage]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][fat]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][cuff]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][short_sleeve]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][neck]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][colby]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][sleeve_width]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][weight]", nil , :size=>4 %></td>
+      <td><a href="javascript:;" onclick="$(this).parents('tr').remove();" class="red">删除</a></td>
+    </tr>
+
+    <tr style="display:none;">
+      <td><%= select_tag "up_sizes[][brand_id]" , options_from_collection_for_select(Brand.all,:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][gender]" , options_for_select([["男",UpSize::Gender::M],['女',UpSize::Gender::W]]) %></td>
+      <td><%= select_tag "up_sizes[][category_id]" , options_for_select(UpSize::M_TYPES.invert) %></td>
+      <td><%= select_tag "up_sizes[][model_id]" , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][size_id]" , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %></td>
+      <td><%= select_tag "up_sizes[][item_id]" , options_from_collection_for_select(Item.where(:brand_id=>Brand.first.try(:id),:category=>Item::Category::UP),:id,:name) %></td>
+      <td><%= text_field_tag "up_sizes[][front_length]" , nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][back_length]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][chest]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][waistline]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][lap]" , nil , :size=>4%></td>
+      <td><%= text_field_tag "up_sizes[][shoulder]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][sleeve]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][cage]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][fat]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][cuff]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][short_sleeve]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][neck]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][colby]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][sleeve_width]", nil , :size=>4 %></td>
+      <td><%= text_field_tag "up_sizes[][weight]", nil , :size=>4 %></td>
+      <td><a href="javascript:;" onclick="$(this).parents('tr').remove();" class="red">删除</a></td>
+    </tr>
+
+  </table>
+  <%= submit_tag "提交" %>
+<% end %>
+
+<script type="text/javascript">
+  $(function(){
+
+    $("select[name='up_sizes[][gender]']").live('change',function(){
+      var gender = $(this).val();
+      var $select = $(this).parent().next().find("select");
+      // console.log($select);
+      // http://www.electrictoolbox.com/jquery-add-option-select-jquery/
+      if (gender == 1){
+        var newOptions = <%= raw UpSize::M_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }else{
+        var newOptions = <%= raw UpSize::W_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }
+    });
+
+    $("select[name='up_sizes[][brand_id]']").live("change",function(){
+      var $this = $(this);
+      var id = $this.val();
+      $.ajax({
+        url: "/admin/models",
+        type: "GET",
+        data: { 'brand_id': id },
+        success: function(data){
+          if (data.status == 'ok'){
+            var newOptions = data.options;
+            var sizeOptions = data.size_options;
+            var itemOptions = data.item_options;
+            var $select = $this.parent().next().next().next().find("select");
+            var $sizeSelect = $this.parent().next().next().next().next().find("select");
+            var $itemSelect = $this.parent().next().next().next().next().next().find("select");
+            Chima.Admin.changeUpSizeCategory($select, newOptions);
+            Chima.Admin.changeUpSizeCategory($sizeSelect, sizeOptions);
+            Chima.Admin.changeUpSizeCategory($itemSelect, itemOptions);
+          }
+        }
+      })
+    })
+  });
+</script>

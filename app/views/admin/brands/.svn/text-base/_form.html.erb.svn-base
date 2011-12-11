@@ -1,0 +1,11 @@
+<%= form_for([:admin,@brand]) do |f| %>
+  <%= error_messages_for @brand %>
+
+  <div class="field">
+    <%= f.label "品牌名字" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<h1>新建上衣尺寸</h1>
+
+<%= render 'form' %>
+
+<%= link_to '返回', admin_up_sizes_path %>

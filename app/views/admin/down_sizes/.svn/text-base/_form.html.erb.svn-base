@@ -1,0 +1,112 @@
+<%= form_for([:admin,@down_size]) do |f| %>
+  <%= error_messages_for @down_size %>
+
+  <div class="field">
+    <%= f.label "品牌" %><br />
+    <%= f.select :brand_id , options_from_collection_for_select(Brand.all,:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "性别" %><br />
+    <%= f.select :gender , options_for_select([["男",DownSize::Gender::M],['女',DownSize::Gender::W]]) %>
+  </div>
+  <div class="field">
+    <%= f.label "种类" %><br />
+    <%= f.select :category_id , options_for_select(DownSize::W_TYPES.invert) %>
+  </div>
+  <div class="field">
+    <%= f.label "型号" %><br />
+    <%= f.select :model_id , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::DOWN),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "尺码" %><br />
+    <%= f.select :size_id , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::DOWN),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "货号" %><br />
+    <%= f.select :item_id , options_from_collection_for_select(Item.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "腰围" %><br />
+    <%= f.text_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label "臀围" %><br />
+    <%= f.text_field :ass %>
+  </div>
+  <div class="field">
+    <%= f.label "裤长" %><br />
+    <%= f.text_field :leng %>
+  </div>
+  <div class="field">
+    <%= f.label "总档" %><br />
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    <%= f.label "横档" %><br />
+    <%= f.text_field :crosspiece %>
+  </div>
+  <div class="field">
+    <%= f.label "前浪" %><br />
+    <%= f.text_field :before_weaves %>
+  </div>
+  <div class="field">
+    <%= f.label "后浪" %><br />
+    <%= f.text_field :back_weaves %>
+  </div>
+  <div class="field">
+    <%= f.label "膝围" %><br />
+    <%= f.text_field :knee %>
+  </div>
+  <div class="field">
+    <%= f.label "裤口" %><br />
+    <%= f.text_field :kukou %>
+  </div>
+  <div class="field">
+    <%= f.label "重量" %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>
+
+
+<script type="text/javascript">
+  $(function(){
+
+    $("#down_size_gender").change(function(){
+      var gender = $(this).val();
+      var $select = $("#down_size_category_id");
+      // http://www.electrictoolbox.com/jquery-add-option-select-jquery/
+      if (gender == 1){
+        var newOptions = <%= raw UpSize::M_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }else{
+        var newOptions = <%= raw UpSize::W_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }
+    });
+
+    $("#down_size_brand_id").change(function(){
+      var id = $(this).val();
+      $.ajax({
+        url: "/admin/models",
+        type: "GET",
+        data: { 'brand_id': id },
+        success: function(data){
+          if (data.status == 'ok'){
+            var newOptions = data.options;
+            var sizeOptions = data.size_options;
+            var itemOptions = data.item_options;
+            var $select = $("#down_size_model_id");
+            var $sizeSelect = $("#down_size_size_id");
+            var $itemSelect = $("#down_size_item_id");
+            Chima.Admin.changeUpSizeCategory($select, newOptions);
+            Chima.Admin.changeUpSizeCategory($sizeSelect, sizeOptions);
+            Chima.Admin.changeUpSizeCategory($itemSelect, itemOptions);
+          }
+        }
+      })
+    })
+  });
+</script>

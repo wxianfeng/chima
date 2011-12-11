@@ -1,0 +1,6 @@
+<h1>编辑</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', [:admin,@up_size] %> |
+<%= link_to 'Back', admin_up_sizes_path %>

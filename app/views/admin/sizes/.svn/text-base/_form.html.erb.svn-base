@@ -1,0 +1,19 @@
+<%= form_for([:admin,@size]) do |f| %>
+  <%= error_messages_for @size %>
+
+  <div class="field">
+    <%= f.label "品牌" %><br />
+    <%= f.select :brand_id , options_from_collection_for_select(Brand.all,:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "名称" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "分类" %><br />
+    <%= f.select :category , options_for_select([["上衣",Model::Category::UP],["下衣",Model::Category::DOWN]]) %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>

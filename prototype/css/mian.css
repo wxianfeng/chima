@@ -1,0 +1,95 @@
+body {
+	font-family:"微软雅黑", "宋体", Arial, Helvetica, sans-serif;
+	background:#c6d8c6;
+	font-size:12px;
+	margin:0;
+	padding:0;
+	color:#10100f;
+}
+
+div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
+
+.layout{width:100%; height:500px; background:url(../images/bg_main.png) repeat-x;}
+.layout_ex{height:577px; background:url(../images/bg_main_1.png) repeat-x;}
+.layout .main{width:790px; margin:0 auto;}
+.main .header{width:710px; height:100px; padding:0 25px 0 55px;}
+
+.header .header_title{float:left; margin-top:28px; font-size:44.67px; color:#599696; font-weight:bold;}
+.header .header_btn{float:right; width:124px; height:33px; font-size:13px; color:#ffffff; line-height:33px; text-align:center; margin-top:53px; background:url(../images/btn_1_0.png) no-repeat; cursor:pointer;}
+
+.main .mbody{width:725px; padding-left:65px; margin-top:30px;} 
+
+.mbody .text_one{font-size:14px; margin-top:20px;}
+.mbody .sexSty{margin-top:35px;}
+.sexSty .sexSty_box{width:116px; margin-right:40px; float:left;}
+.sexSty_box .sexStyBlock{width:116px; height:129px; background:#eff1e6;}
+.sexStyBlock .ssb_top{width:116px; height:75px; text-align:center; margin-top:25px;}
+.sexStyBlock .ssb_radio{width:12px; height:12px; margin:0 auto; margin-top:9px;}
+/*.sexStyBlock .ssb_radio_none{background:url(../images/radio_2_0.png) no-repeat;}*/
+.sexSty_box .sexStyName{width:116px; font-size:14px; text-align:center; margin-top:5px;}
+
+.mbody .button_one,.button_two,.button_three,.button_four{height:48px; padding-right:5px; text-align:center; font-size:18px; line-height:48px; color:#599696; cursor:pointer; clear:both}
+.mbody .button_one{width:135px;  margin-top:67px; background:url(../images/btn_2_1.png) no-repeat;}
+.mbody .button_two{width:211px; margin-top:153px; background:url(../images/btn_3.png) no-repeat;}
+.mbody .button_three{width:211px; background:url(../images/btn_4.png) no-repeat;}
+.mbody .button_four{width:211px; background:url(../images/btn_5.png) no-repeat; margin-right:35px; clear:none; float:left;}
+
+.mbody .bodydata{margin-top:22px;}
+.bodydata .bd_block{height:25px; line-height:25px; margin-bottom:20px;}
+.bd_block span{float:left;}
+.bd_block span.b_name{margin-right:10px; font-size:14px;}
+.bd_block span.b_sele{width:125px; height:17px; padding-left:5px; line-height:17px; display:block; padding-right:21px; overflow:hidden; border:1px solid #3c3c37; background:url(../images/sel_1.png) no-repeat right; margin-right:5px; margin-top:3px;}
+.bd_block span.b_dwei{font-size:11px;}
+
+.bd_block ul.b_sele_ex{width:151px; display:block; overflow:hidden; border:1px solid #3c3c37; position:absolute; background:#f0f0de; margin-top:21px; margin-left:38px; _margin-left:-218px; z-index:3; display:none;}
+.bd_block ul.b_sele_ex li{list-style:none; line-height:20px;}
+.bd_block ul.b_sele_ex li a{width:141px; height:20px; display:block; padding:0 5px; color:#000000; text-decoration:none;}
+.bd_block ul.b_sele_ex li a:hover{background:#666666; color:#eeeeee;}
+
+.mbody .specs{margin-top:55px;}
+.specs .specs_box{float:left; margin-right:30px; height:25px; margin-top:3px;}
+.specs_box span{float:left;}
+.specs_box span img{margin-top:5px;}
+.specs_box span.specsText{padding-left:6px; font-size:14px;}
+.specs .specs_font{font-size:19px; color:#599696; margin:0; font-weight:normal;}
+
+.mbody .textBox{height:30px; line-height:30px;}
+.mbody .tableBox{margin-top:5px;}
+.tableBox table{width:660px; border:0.5px solid #599696; border-top:1px solid #a4c3ba; background:#a4c3ba; text-align:center;}
+.tableBox table tr,td{border:0; background:#eeefdd;}
+.tableBox table tr.trHeight_01{height:25px; line-height:25px;}
+.tableBox table tr.trHeight_02{height:30px; line-height:30px;}
+.tableBox table tr.trHeight_03{height:35px; line-height:35px;}
+.mbody p#explain{margin:0; padding:0; padding-left:5px; line-height:20px; width:660px;}
+.mbody p#explain span{display:block;}
+.mbody p#explain span.indent{text-indent:25px;}
+
+.mbody .margin_00{margin-top:5px;}
+.mbody .margin_01{margin-top:105px;}
+.mbody .margin_02{margin-top:40px;}
+.mbody .margin_03{margin-top:10px;}
+.mbody .fontSize_01{font-size:12px;}
+.mbody .fontSize_02{font-size:17px;}
+.mbody .fontSize_03{font-size:24px;}
+.mbody .fontSize_04{font-size:13px;}
+.mbody .fontSize_05{font-size:14px;}
+.mbody .bold{font-weight:bold;}
+.mbody .lineHeight{line-height:40px;}
+.mbody .padding_01{padding-left:5px;}
+
+.mbody .color_01{color:#599696;}
+.mbody .color_02{color:#555555;}
+.mbody .color_03{color:#333333;}
+
+
+
+
+
+
+
+
+
+
+
+
+

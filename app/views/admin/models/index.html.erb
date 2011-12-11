@@ -1,0 +1,27 @@
+<h1>型号列表</h1>
+
+<table>
+  <tr>
+    <th>型号</th>
+    <th>品牌</th>
+    <th>类别</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @models.each do |model| %>
+  <tr>
+    <td><%= model.name %></td>
+    <td><%= model.brand.try(:name) %></td>
+    <td><%= model.human_category %></td>
+    <td><%= link_to '显示', [:admin,model] %></td>
+    <td><%= link_to '编辑', edit_admin_model_path(model) %></td>
+    <td><%= link_to '删除', [:admin,model], confirm: '确定删除?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新型号', new_admin_model_path %>

@@ -1,0 +1,131 @@
+<%= form_for([:admin,@up_size]) do |f| %>
+  <%= error_messages_for @up_size %>
+
+  <div class="field">
+    <%= f.label "品牌" %><br />
+    <%= f.select :brand_id , options_from_collection_for_select(Brand.all,:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "性别" %><br />
+    <%= f.select :gender , options_for_select([["男",UpSize::Gender::M],['女',UpSize::Gender::W]]) %>
+  </div>
+  <div class="field">
+    <%= f.label "种类" %><br />
+    <%= f.select :category_id , options_for_select(UpSize::M_TYPES.invert) %>
+  </div>
+  <div class="field">
+    <%= f.label "型号" %><br />
+    <%= f.select :model_id , options_from_collection_for_select(Model.where(:brand_id=>Brand.first.try(:id),:category=>Model::Category::UP),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "尺码" %><br />
+    <%= f.select :size_id , options_from_collection_for_select(Size.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "货号" %><br />
+    <%= f.select :item_id , options_from_collection_for_select(Item.where(:brand_id=>Brand.first.try(:id),:category=>Size::Category::UP),:id,:name) %>
+  </div>
+  <div class="field">
+    <%= f.label "前长" %><br />
+    <%= f.text_field :front_length %>
+  </div>
+  <div class="field">
+    <%= f.label "后长" %><br />
+    <%= f.text_field :back_length %>
+  </div>
+  <div class="field">
+    <%= f.label "胸围" %><br />
+    <%= f.text_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label "腰围" %><br />
+    <%= f.text_field :waistline %>
+  </div>
+  <div class="field">
+    <%= f.label "下摆" %><br />
+    <%= f.text_field :lap %>
+  </div>
+  <div class="field">
+    <%= f.label "肩宽" %><br />
+    <%= f.text_field :shoulder %>
+  </div>
+  <div class="field">
+    <%= f.label "袖长" %><br />
+    <%= f.text_field :sleeve %>
+  </div>
+  <div class="field">
+    <%= f.label "袖笼" %><br />
+    <%= f.text_field :cage %>
+  </div>
+  <div class="field">
+    <%= f.label "袖肥" %><br />
+    <%= f.text_field :fat %>
+  </div>
+  <div class="field">
+    <%= f.label "袖口" %><br />
+    <%= f.text_field :cuff %>
+  </div>
+  <div class="field">
+    <%= f.label "短袖长" %><br />
+    <%= f.text_field :short_sleeve %>
+  </div>
+  <div class="field">
+    <%= f.label "领围" %><br />
+    <%= f.text_field :neck %>
+  </div>
+  <div class="field">
+    <%= f.label "领高" %><br />
+    <%= f.text_field :colby %>
+  </div>
+  <div class="field">
+    <%= f.label "袖宽" %><br />
+    <%= f.text_field :sleeve_width %>
+  </div>
+  <div class="field">
+    <%= f.label "重量" %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(function(){
+
+    $("#up_size_gender").change(function(){
+      var gender = $(this).val();
+      var $select = $("#up_size_category_id");
+      // http://www.electrictoolbox.com/jquery-add-option-select-jquery/
+      if (gender == 1){
+        var newOptions = <%= raw UpSize::M_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }else{
+        var newOptions = <%= raw UpSize::W_TYPES.to_json %>;
+        Chima.Admin.changeUpSizeCategory($select,newOptions);
+      }
+    });
+
+    $("#up_size_brand_id").change(function(){
+      var id = $(this).val();
+      $.ajax({
+        url: "/admin/models",
+        type: "GET",
+        data: { 'brand_id': id },
+        success: function(data){
+          if (data.status == 'ok'){
+            var newOptions = data.options;
+            var sizeOptions = data.size_options;
+            var itemOptions = data.item_options;
+            var $select = $("#up_size_model_id");
+            var $selectSize = $("#up_size_size_id");
+            var $selectItem = $("#up_size_item_id");
+            Chima.Admin.changeUpSizeCategory($select, newOptions);
+            Chima.Admin.changeUpSizeCategory($selectSize, sizeOptions);
+            Chima.Admin.changeUpSizeCategory($selectItem, itemOptions);
+          }
+        }
+      })
+    })
+  });
+</script>

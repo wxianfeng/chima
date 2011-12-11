@@ -1,0 +1,18 @@
+<p>
+  <b>型号名称:</b>
+  <%= @model.name %>
+</p>
+
+<p>
+  <b>品牌:</b>
+  <%= @model.brand.name %>
+</p>
+
+<p>
+  <b>类别:</b>
+  <%= @model.human_category %>
+</p>
+
+
+<%= link_to '编辑', edit_admin_model_path(@model) %> |
+<%= link_to '返回', admin_models_path %>

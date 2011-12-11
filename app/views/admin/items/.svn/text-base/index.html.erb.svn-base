@@ -1,0 +1,27 @@
+<h1>货号列表</h1>
+
+<table>
+  <tr>
+    <th>名字</th>
+    <th>品牌</th>
+    <th>分类</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.brand.try(:name) %></td>
+    <td><%= item.human_category %></td>
+    <td><%= link_to '显示', [:admin,item] %></td>
+    <td><%= link_to '编辑', edit_admin_item_path(item) %></td>
+    <td><%= link_to '删除', [:admin,item], confirm: '确定删除?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新货号', new_admin_item_path %>

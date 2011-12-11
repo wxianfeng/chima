@@ -1,0 +1,18 @@
+<p>
+  <b>品牌:</b>
+  <%= @size.brand_id %>
+</p>
+
+<p>
+  <b>名称:</b>
+  <%= @size.name %>
+</p>
+
+<p>
+  <b>类别:</b>
+  <%= @size.human_category %>
+</p>
+
+
+<%= link_to '编辑', edit_admin_size_path(@size) %> |
+<%= link_to '返回', admin_sizes_path %>

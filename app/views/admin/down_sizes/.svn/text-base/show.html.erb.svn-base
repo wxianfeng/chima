@@ -1,0 +1,58 @@
+<p>
+  <b>Chima:</b>
+  <%= @down_size.chima_id %>
+</p>
+
+<p>
+  <b>Chest:</b>
+  <%= @down_size.chest %>
+</p>
+
+<p>
+  <b>Ass:</b>
+  <%= @down_size.ass %>
+</p>
+
+<p>
+  <b>Leng:</b>
+  <%= @down_size.leng %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @down_size.total %>
+</p>
+
+<p>
+  <b>Crosspiece:</b>
+  <%= @down_size.crosspiece %>
+</p>
+
+<p>
+  <b>Before weaves:</b>
+  <%= @down_size.before_weaves %>
+</p>
+
+<p>
+  <b>Back weaves:</b>
+  <%= @down_size.back_weaves %>
+</p>
+
+<p>
+  <b>Knee:</b>
+  <%= @down_size.knee %>
+</p>
+
+<p>
+  <b>Kukou:</b>
+  <%= @down_size.kukou %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @down_size.weight %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_down_size_path(@down_size) %> |
+<%= link_to 'Back', admin_down_sizes_path %>
