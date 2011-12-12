@@ -10,3 +10,4 @@
 //= require jquery_ujs
 //= require w
 //= require admin
+//= require global
