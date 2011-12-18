@@ -23,6 +23,10 @@ class WelcomeController < ApplicationController
     @user.update_attribute :weight , params[:weight]
   end
 
+  def step4
+    @user.update_attribute :style , params[:style]
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])

@@ -1,6 +1,12 @@
 # encoding:utf-8
 class User < ActiveRecord::Base
 
+  module Style
+    THIN = 'thin' # 瘦身
+    NORMAL = 'normal' # 普通
+    LOOSE = 'loose' # 宽松
+  end
+
   def self.find_or_create(visitor)
     visitor_id = visitor[0].split(/=/)[1]
     visitor_nick = visitor[1].split(/=/)[1]

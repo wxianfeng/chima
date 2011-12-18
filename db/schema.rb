@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218155357) do
+ActiveRecord::Schema.define(:version => 20111218162615) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20111218155357) do
     t.integer  "gender",                                      :default => 0
     t.integer  "height"
     t.decimal  "weight",       :precision => 10, :scale => 1
+    t.string   "style",                                       :default => "thin"
   end
 
 end

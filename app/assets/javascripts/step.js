@@ -31,6 +31,10 @@
       var height = $("#height").val();
       var weight = $("#weight").val();
       window.location.href = "/welcome/step3?height=" + height + "&weight=" + weight
+    },
+    jumpTo4: function(){
+      var style = $("#style").val();
+      window.location.href = "/welcome/step4?style=" + style;
     }
   };
 

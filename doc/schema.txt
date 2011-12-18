@@ -64,5 +64,6 @@ users
   gender int (0: 男,1: 女)
   height int 身高
   weight decimal 体重
+  style varchar 偏爱的衣服 (normal: 普通,thin: 瘦身,loose: 宽松)
 
 
