@@ -16,9 +16,11 @@ $(document).ready(function(){
 		if(event.target.id=="male"){
 			$('#female').attr("src","/assets/radio_2_0.png");
 			$('#male').attr("src","/assets/radio_1_0.png");
+            $("#gender").val(0);
 		}else if(event.target.id=="female"){
 			$('#male').attr("src","/assets/radio_2_0.png");
 			$('#female').attr("src","/assets/radio_1_0.png");
+            $("#gender").val(1)
 		}
 	});
 

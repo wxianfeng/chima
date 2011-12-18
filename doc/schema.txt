@@ -59,7 +59,10 @@ items 货号表
   category string 类别 (up: 上衣,down: 下衣)
 
 users
-visitor_id int
-visitor_nick varchar
+  visitor_id int
+  visitor_nick varchar
+  gender int (0: 男,1: 女)
+  height int 身高
+  weight decimal 体重
 
 
