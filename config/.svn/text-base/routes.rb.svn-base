@@ -1,5 +1,7 @@
 Chima::Application.routes.draw do
-  root :to => 'welcome#index'
+  root :to => 'welcome#step1'
+
+  match "/welcome/:action" , :controller => "welcome" , :as => "welcome"
 
   namespace :admin do
     root :to => 'up_sizes#index'

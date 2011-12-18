@@ -1,0 +1,28 @@
+api 调用详解
+http://open.taobao.com/doc/detail.htm?spm=1.41867.77354.5&id=105
+
+买家应用规范
+http://open.taobao.com/doc/detail.htm?id=173
+
+开发文档:
+http://dev.open.taobao.com/dev/index.php/%E9%A6%96%E9%A1%B5
+
+预览地址:
+http://yingyong.taobao.com/third/preview.htm?appkey=12429317
+
+沙箱访问地址:
+http://container.api.tbsandbox.com/container?appkey=12429317
+
+沙箱测试账号:
+user: alipublic01
+password: taobao1234
+
+callback 回调地址(经过taobao):
+http://localhost:3000/?top_appkey=12429317&top_parameters=ZXhwaXJlc19pbj04NjQwMCZpZnJhbWU9MSZyZV9leHBpcmVzX2luPTE1NTUyMDAwJnJlZnJlc2hfdG9rZW49NjEwMTkxMDdlYjY2NWQzNTBlMWEwNTdjOTgxNmNiZGVjYTMyMjVmZjQ2YjgxNTUxNzU3NTQzNTEmdHM9MTMyMzg3MjcyNDg0MCZ2aXNpdG9yX2lkPTE3NTc1NDM1MSZ2aXNpdG9yX25pY2s9YWxpcHVibGljMDE%3D&top_session=6100410cf369afa40416d04b147906cc95c05029f854431175754351&callback=http%3A%2F%2Flocalhost%3A3000&top_sign=Ozhg1JLmePnGNZVLOIkueA%3D%3D
+
+ruby 调用API实例
+http://marshluca.com/2010/02/taobao-ruby-api-demo/
+http://www.iteye.com/topic/307081
+
+ruby 加密:
+http://www.oschina.net/code/snippet_87799_738

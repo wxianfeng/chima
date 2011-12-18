@@ -11,3 +11,4 @@
 //= require w
 //= require admin
 //= require global
+//= require step

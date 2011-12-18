@@ -39,6 +39,9 @@ dir
 helpers
 dir
 
+lib
+dir
+
 models
 dir
 
@@ -47,6 +50,40 @@ dir
 
 routing
 dir
+
+spec_helper.rb
+file
+622
+
+
+
+2011-12-14T15:09:12.000000Z
+abc2c103a3e0241eed7edc8150cf3289
+2011-12-18T15:30:05.054193Z
+622
+wxianfeng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+403
 
 views
 dir

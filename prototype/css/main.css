@@ -81,7 +81,19 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .mbody .color_02{color:#555555;}
 .mbody .color_03{color:#333333;}
 
+/* five */
+.mbody .f_Left{width:250px; float:left; margin-top:17px;}
+.f_Left .f_LeftTop{width:138px; height:45px; margin-left:25px; margin-bottom:4px;} 
+.f_Left .f_LeftCell{width:250px; height:25px; line-height:25px; margin-bottom:5px;}
+.f_LeftCell span{float:left;}
+.f_LeftCell span.span01{width:105px;}
+.f_LeftCell span.span02{width:62px;}
+.f_LeftCell span.span02 input.i_sty{width:53px; height:17px; line-height:17px; border:1px solid #b9d0c4; margin-top:2px;}
+.f_LeftCell span.span03{width:42px; height:17px; line-height:17px; margin-top:4px; background:url(../images/btn_6.png) no-repeat; color:#ffffff; text-align:center; cursor:pointer; margin-left:15px;}
 
+.mbody .f_Right{width:376px; height:259px; float:left; margin-top:63px; margin-left:15px; background:url(../images/bg_01.png) no-repeat; padding:20px 27px 20px 26px;}
+.f_Right .f_RightPic{width:376px; height:204px;}
+.f_Right .f_RightExplain{width:376px; line-height:18px; margin-top:15px;}
 
 
 

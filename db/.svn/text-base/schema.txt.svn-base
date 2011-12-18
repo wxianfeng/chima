@@ -58,3 +58,8 @@ items 货号表
   name varchar 货号名称
   category string 类别 (up: 上衣,down: 下衣)
 
+users
+visitor_id int
+visitor_nick varchar
+
+

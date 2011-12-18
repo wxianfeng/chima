@@ -1,14 +1,14 @@
 10
 
 dir
-605
+621
 svn://wxianfeng.com/chima/prototype/css
 svn://wxianfeng.com
 
 
 
-2011-12-05T18:32:45.528413Z
-604
+2011-12-17T09:20:01.465913Z
+619
 zhangliang
 
 
@@ -33,16 +33,16 @@ c9c43223-3a15-4248-947a-f546d6373bce
 
 0
 
-mian.css
+main.css
 file
 
 
 
 
-2011-12-08T14:19:35.000000Z
-079ed7581c3b08d8349cb10f409ec592
-2011-12-05T18:32:45.528413Z
-604
+2011-12-17T15:17:15.000000Z
+ea26b610d87cd590ccfa4a86cbc570b9
+2011-12-17T09:20:01.465913Z
+619
 zhangliang
 
 
@@ -65,5 +65,5 @@ zhangliang
 
 
 
-4570
+5535
 
