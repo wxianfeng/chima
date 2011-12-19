@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, div, span, object, frame, h1, h2, h3, h4, h5, h6, p, blockquote, a, code, em, img, q, small, strong, dd, dl, dt, li, ol, ul, fieldset, form, label, table, tbody, tr, th, td, input{margin:0;padding:0;outline:0;}
+button{ cursor:pointer;}
+ul, li { list-style-type: none; }
+.clearfix:after{content:".";height:0;visibility:hidden;display:block;clear:both;}
+.clearfix{display:block; min-height: 1%; }
+.clear{clear: both;}

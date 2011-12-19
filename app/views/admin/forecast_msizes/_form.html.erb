@@ -1,0 +1,51 @@
+<%= form_for([:admin,@forecast_msize]) do |f| %>
+  <%= error_messages_for @forecast_msize %>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :chest %><br />
+    <%= f.text_field :chest %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_chest %><br />
+    <%= f.text_field :middle_chest %>
+  </div>
+  <div class="field">
+    <%= f.label :shoulder %><br />
+    <%= f.text_field :shoulder %>
+  </div>
+  <div class="field">
+    <%= f.label :sleeve %><br />
+    <%= f.text_field :sleeve %>
+  </div>
+  <div class="field">
+    <%= f.label :neck %><br />
+    <%= f.text_field :neck %>
+  </div>
+  <div class="field">
+    <%= f.label :down_chest %><br />
+    <%= f.text_field :down_chest %>
+  </div>
+  <div class="field">
+    <%= f.label :ass %><br />
+    <%= f.text_field :ass %>
+  </div>
+  <div class="field">
+    <%= f.label :crosspiece %><br />
+    <%= f.text_field :crosspiece %>
+  </div>
+  <div class="field">
+    <%= f.label :foot %><br />
+    <%= f.text_field :foot %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>

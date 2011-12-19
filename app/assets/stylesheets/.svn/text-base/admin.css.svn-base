@@ -1,8 +1,14 @@
 /*
 *= require scaffolds
+*= require reset
 */
 
 a.red { color: #f00; }
+ul.menu { list-style: none; display: inline; width:100%;height: 35px;top: 0;left: 0;position: fixed;z-index:9998;background: #E9E9F3; }
+ul.menu li { float: left; border: 1px solid #CCCCCC;padding: 5px; }
+ul.menu li a { color: dimgray; }
+
+#content { margin-top: 47px; }
 
 /* http://fluidmind.org/test/css/tables.html see sources Design 6 */
 table {

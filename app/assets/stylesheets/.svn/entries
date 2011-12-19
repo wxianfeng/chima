@@ -35,14 +35,14 @@ c9c43223-3a15-4248-947a-f546d6373bce
 
 admin.css
 file
-614
+628
 
 
 
-2011-12-11T13:29:17.000000Z
-bd0acc2507e7138eb9402fba8d5dc971
-2011-12-11T13:29:54.996206Z
-614
+2011-12-19T16:02:54.000000Z
+c76945211affb6ec177e1ddbbdd37126
+2011-12-19T16:06:25.352765Z
+628
 wxianfeng
 
 
@@ -65,7 +65,7 @@ wxianfeng
 
 
 
-771
+1057
 
 application.css
 file
@@ -151,15 +151,7 @@ deleted
 
 forecast_msizes.css.scss
 file
-626
-
-
-
-2011-12-19T15:08:47.000000Z
-9da601ffbb88f21c93628b372a286004
-2011-12-19T15:16:07.785964Z
-626
-wxianfeng
+628
 
 
 
@@ -179,21 +171,11 @@ wxianfeng
 
 
 
-
-
-185
+deleted
 
 forecast_wsizes.css.scss
 file
-626
-
-
-
-2011-12-19T15:09:21.000000Z
-34a9a6469a67e613aadb81cae9dc386c
-2011-12-19T15:16:07.785964Z
-626
-wxianfeng
+628
 
 
 
@@ -213,9 +195,7 @@ wxianfeng
 
 
 
-
-
-185
+deleted
 
 main.css
 file
@@ -299,6 +279,40 @@ file
 
 deleted
 
+reset.css
+file
+628
+
+
+
+2011-12-19T16:03:52.000000Z
+c38c2980f590d36179c5bdc8b675d6ab
+2011-12-19T16:06:25.352765Z
+628
+wxianfeng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+469
+
 scaffolds.css
 file
 612
@@ -325,14 +339,14 @@ deleted
 
 scaffolds.css.scss
 file
-612
+628
 
 
 
-2011-12-11T11:28:36.000000Z
-9c2237b8f7c6d35079b58db1d39d9951
-2011-12-11T13:00:52.169626Z
-612
+2011-12-19T16:01:37.000000Z
+7c80e09f849cc7a0926f7bec8a5e180b
+2011-12-19T16:06:25.352765Z
+628
 wxianfeng
 
 
@@ -355,7 +369,7 @@ wxianfeng
 
 
 
-1017
+917
 
 sizes.css.scss
 file

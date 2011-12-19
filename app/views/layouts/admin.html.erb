@@ -7,16 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <ul>
+    <ul class="menu">
       <li><%= link_to "品牌" , admin_brands_path %></li>
       <li><%= link_to "型号" , admin_models_path %></li>
       <li><%= link_to "尺码" , admin_sizes_path %></li>
       <li><%= link_to "货号" , admin_items_path %></li>
-      <li><%= link_to "上衣尺寸" , admin_up_sizes_path %></li>
-      <li><%= link_to "下衣尺寸" , admin_down_sizes_path %></li>
+      <li><%= link_to "品牌上衣尺寸" , admin_up_sizes_path %></li>
+      <li><%= link_to "品牌下衣尺寸" , admin_down_sizes_path %></li>
+      <li><%= link_to "预估尺寸(男)" , admin_forecast_msizes_path %></li>
+      <li><%= link_to "预估尺寸(女)" , admin_forecast_wsizes_path %></li>
     </ul>
 
-    <%= yield %>
+    <div id="content">
+      <%= yield %>
+    </div>
 
   </body>
 </html>

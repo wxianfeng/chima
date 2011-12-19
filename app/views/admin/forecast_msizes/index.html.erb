@@ -1,0 +1,43 @@
+<h1>男士预估尺寸列表</h1>
+
+<table>
+  <tr>
+    <th>身高</th>
+    <th>体重</th>
+    <th>胸围</th>
+    <th>中腰围</th>
+    <th>肩宽</th>
+    <th>袖长</th>
+    <th>领围</th>
+    <th>腰围</th>
+    <th>臀围</th>
+    <th>横档</th>
+    <th>脚长</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @forecast_msizes.each do |forecast_msize| %>
+  <tr>
+    <td><%= forecast_msize.height %></td>
+    <td><%= forecast_msize.weight %></td>
+    <td><%= forecast_msize.chest %></td>
+    <td><%= forecast_msize.middle_chest %></td>
+    <td><%= forecast_msize.shoulder %></td>
+    <td><%= forecast_msize.sleeve %></td>
+    <td><%= forecast_msize.neck %></td>
+    <td><%= forecast_msize.down_chest %></td>
+    <td><%= forecast_msize.ass %></td>
+    <td><%= forecast_msize.crosspiece %></td>
+    <td><%= forecast_msize.foot %></td>
+    <td><%= link_to '显示', [:admin,forecast_msize] %></td>
+    <td><%= link_to '编辑', edit_admin_forecast_msize_path(forecast_msize) %></td>
+    <td><%= link_to '删除', [:admin,forecast_msize], confirm: '确定?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新的预估尺寸', new_admin_forecast_msize_path %>
