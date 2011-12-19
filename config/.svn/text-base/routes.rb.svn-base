@@ -1,4 +1,8 @@
 Chima::Application.routes.draw do
+  resources :forecast_wsizes
+
+  resources :forecast_msizes
+
   root :to => 'welcome#step1'
 
   match "/welcome/:action" , :controller => "welcome" , :as => "welcome"

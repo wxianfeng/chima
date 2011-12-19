@@ -66,4 +66,30 @@ users
   weight decimal 体重
   style varchar 偏爱的衣服 (normal: 普通,thin: 瘦身,loose: 宽松)
 
+forecast_msizes 预估尺寸(男)
+  height int 身高
+  weight decimal(10,2) 体重
+  chest decimal(10,2) 胸围
+  middle_chest decimal(10,2) 中腰围
+  shoulder decimal(10,2) 肩宽
+  sleeve decimal(10,2) 袖长
+  neck decimal(10,2) 领围
+  down_chest  decinmal(10,2) 腰围
+  ass decimal(10,2) 臀围
+  crosspiece decimal(10,2) 横档
+  foot decimal(10,2) 脚长
+
+forecast_wsizes 预估尺寸(女)
+  height int 身高
+  weight decimal(10,2) 体重
+  chest decimal(10,2) 胸围
+  middle_chest decimal(10,2) 中腰围
+  shoulder decimal(10,2) 肩宽
+  sleeve decimal(10,2) 袖长
+  neck decimal(10,2) 领围
+  down_chest  decinmal(10,2) 腰围
+  ass decimal(10,2) 臀围
+  crosspiece decimal(10,2) 横档
+  foot decimal(10,2) 脚长
+
 

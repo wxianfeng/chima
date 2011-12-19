@@ -7,7 +7,7 @@
       if(W.String.isEmpty(gender)){
         gender = 0;
       }
-      window.location.href = "/welcome/step2&gender=" + gender;
+      window.location.href = "/welcome/step2?gender=" + gender;
     },
     selectHeight: function(self){
       var height = self.text();

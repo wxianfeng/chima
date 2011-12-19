@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111218162615) do
+ActiveRecord::Schema.define(:version => 20111219150136) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -42,6 +42,42 @@ ActiveRecord::Schema.define(:version => 20111218162615) do
   end
 
   add_index "down_sizes", ["chima_id"], :name => "index_down_sizes_on_chima_id"
+
+  create_table "forecast_msizes", :force => true do |t|
+    t.integer  "height"
+    t.decimal  "weight",       :precision => 10, :scale => 2
+    t.decimal  "chest",        :precision => 10, :scale => 2
+    t.decimal  "middle_chest", :precision => 10, :scale => 2
+    t.decimal  "shoulder",     :precision => 10, :scale => 2
+    t.decimal  "sleeve",       :precision => 10, :scale => 2
+    t.decimal  "neck",         :precision => 10, :scale => 2
+    t.decimal  "down_chest",   :precision => 10, :scale => 2
+    t.decimal  "ass",          :precision => 10, :scale => 2
+    t.decimal  "crosspiece",   :precision => 10, :scale => 2
+    t.decimal  "foot",         :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forecast_msizes", ["height", "weight"], :name => "index_forecast_msizes_on_height_and_weight"
+
+  create_table "forecast_wsizes", :force => true do |t|
+    t.integer  "height"
+    t.decimal  "weight",       :precision => 10, :scale => 2
+    t.decimal  "chest",        :precision => 10, :scale => 2
+    t.decimal  "middle_chest", :precision => 10, :scale => 2
+    t.decimal  "shoulder",     :precision => 10, :scale => 2
+    t.decimal  "sleeve",       :precision => 10, :scale => 2
+    t.decimal  "neck",         :precision => 10, :scale => 2
+    t.decimal  "down_chest",   :precision => 10, :scale => 2
+    t.decimal  "ass",          :precision => 10, :scale => 2
+    t.decimal  "crosspiece",   :precision => 10, :scale => 2
+    t.decimal  "foot",         :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "forecast_wsizes", ["height", "weight"], :name => "index_forecast_wsizes_on_height_and_weight"
 
   create_table "items", :force => true do |t|
     t.string   "name"
