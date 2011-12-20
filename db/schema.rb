@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111220160236) do
+ActiveRecord::Schema.define(:version => 20111220161756) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(:version => 20111220160236) do
   add_index "down_sizes", ["chima_id"], :name => "index_down_sizes_on_chima_id"
 
   create_table "forecast_msizes", :force => true do |t|
-    t.integer  "height"
-    t.decimal  "weight",       :precision => 10, :scale => 2
+    t.integer  "height_id"
+    t.integer  "weight_id"
     t.decimal  "chest",        :precision => 10, :scale => 2
     t.decimal  "middle_chest", :precision => 10, :scale => 2
     t.decimal  "shoulder",     :precision => 10, :scale => 2
@@ -59,11 +59,11 @@ ActiveRecord::Schema.define(:version => 20111220160236) do
     t.datetime "updated_at"
   end
 
-  add_index "forecast_msizes", ["height", "weight"], :name => "index_forecast_msizes_on_height_and_weight"
+  add_index "forecast_msizes", ["height_id", "weight_id"], :name => "index_forecast_msizes_on_height_and_weight"
 
   create_table "forecast_wsizes", :force => true do |t|
-    t.integer  "height"
-    t.decimal  "weight",       :precision => 10, :scale => 2
+    t.integer  "height_id"
+    t.integer  "weight_id"
     t.decimal  "chest",        :precision => 10, :scale => 2
     t.decimal  "middle_chest", :precision => 10, :scale => 2
     t.decimal  "shoulder",     :precision => 10, :scale => 2
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20111220160236) do
     t.datetime "updated_at"
   end
 
-  add_index "forecast_wsizes", ["height", "weight"], :name => "index_forecast_wsizes_on_height_and_weight"
+  add_index "forecast_wsizes", ["height_id", "weight_id"], :name => "index_forecast_wsizes_on_height_and_weight"
 
   create_table "heights", :force => true do |t|
     t.integer  "value"

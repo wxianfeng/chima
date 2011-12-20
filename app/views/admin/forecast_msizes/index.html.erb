@@ -20,8 +20,8 @@
 
 <% @forecast_msizes.each do |forecast_msize| %>
   <tr>
-    <td><%= forecast_msize.height %></td>
-    <td><%= forecast_msize.weight %></td>
+    <td><%= forecast_msize.height.try(:value) %></td>
+    <td><%= forecast_msize.weight.try(:value) %></td>
     <td><%= forecast_msize.chest %></td>
     <td><%= forecast_msize.middle_chest %></td>
     <td><%= forecast_msize.shoulder %></td>

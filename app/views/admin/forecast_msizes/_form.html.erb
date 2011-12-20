@@ -3,11 +3,11 @@
 
   <div class="field">
     <%= f.label :height %><br />
-    <%= f.number_field :height %>
+    <%= f.select :height_id , options_from_collection_for_select(Height.all,:id,:value) %>
   </div>
   <div class="field">
     <%= f.label :weight %><br />
-    <%= f.text_field :weight %>
+    <%= f.select :weight_id , options_from_collection_for_select(Weight.all,:id,:value) %>
   </div>
   <div class="field">
     <%= f.label :chest %><br />
@@ -29,6 +29,7 @@
     <%= f.label :neck %><br />
     <%= f.text_field :neck %>
   </div>
+  <hr/>
   <div class="field">
     <%= f.label :down_chest %><br />
     <%= f.text_field :down_chest %>
