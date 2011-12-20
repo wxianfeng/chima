@@ -6,3 +6,5 @@ tmp/
 .svn
 .DS_Store
 config/database.yml
+Gemfile.lock
+db/schema.rb
