@@ -1,0 +1,11 @@
+<%= form_for([:admin,@height]) do |f| %>
+<%= error_messages_for @height %>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.number_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>

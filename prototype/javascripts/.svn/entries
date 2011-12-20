@@ -1,14 +1,14 @@
 10
 
 dir
-621
+632
 svn://wxianfeng.com/chima/prototype/javascripts
 svn://wxianfeng.com
 
 
 
-2011-12-05T18:33:20.376846Z
-605
+2011-12-19T16:17:58.916345Z
+630
 zhangliang
 
 
@@ -39,10 +39,10 @@ file
 
 
 
-2011-12-08T14:19:35.000000Z
-1c4b31f5ab1e301fa5fd2b64ebfef813
-2011-12-05T18:33:20.376846Z
-605
+2011-12-20T16:10:44.000000Z
+0a488c6696d96df88fd40fb2e01c0344
+2011-12-19T16:17:58.916345Z
+630
 zhangliang
 
 
@@ -65,7 +65,7 @@ zhangliang
 
 
 
-1388
+2079
 
 jquery-1.5.min.js
 file

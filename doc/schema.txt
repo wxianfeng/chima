@@ -92,4 +92,10 @@ forecast_wsizes 预估尺寸(女)
   crosspiece decimal(10,2) 横档
   foot decimal(10,2) 脚长
 
+heights 身高
+  value int 身高
+
+weights 体重
+  value decimal(10,2) 体重
+
 

@@ -29,3 +29,7 @@ zh_CN:
         ass: 臀围
         crosspiece: 横档
         foot: 脚长
+      height:
+        value: 身高
+      weight:
+        value: 体重

@@ -1,0 +1,23 @@
+<h1>体重</h1>
+
+<table>
+  <tr>
+    <th>体重</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @weights.each do |weight| %>
+  <tr>
+    <td><%= weight.value %></td>
+    <td><%= link_to '显示', [:admin,weight] %></td>
+    <td><%= link_to '编辑', edit_admin_weight_path(weight) %></td>
+    <td><%= link_to '删除', [:admin,weight], confirm: '确定?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新体重', new_admin_weight_path %>

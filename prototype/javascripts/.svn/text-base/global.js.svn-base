@@ -22,14 +22,16 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#sg_data,#tz_data').click(function(event){
+	$('#sg_data,#tz_data,#pinpai_name').click(function(event){
 		if(event.target.id=="sg_data"){
 			$('#shengao').show();	
 			$('#tizhong').hide();
 		}else if(event.target.id=="tz_data"){
 			$('#tizhong').show();	
 			$('#shengao').hide();
-		}							  
+		}else if(event.target.id=="pinpai_name"){
+			$('#pinpai').show();	
+		}						  
 	});
 	
 	$('#shengao li a').click(function(event){
@@ -40,4 +42,19 @@ $(document).ready(function(){
 		$('#tizhong').hide();
 		$('#tz_data').html($(this).html());							   
 	});
+	$('#pinpai li a').click(function(event){
+		$('#pinpai').hide();
+		$('#pinpai_name').html($(this).html());							   
+	});
+	$('#zhonglei span').click(function(index){
+		$('#zhonglei span').removeClass('styBox_leftCell_chosen').addClass('styBox_leftCell');
+		if(index){
+			var num = $(this).index();
+			$(this).removeClass('styBox_leftCell').addClass('styBox_leftCell_chosen');
+			$('.leftCell_ul').hide();
+			$('#leftCell_ul_'+num).show();
+		}
+	});
+	$('#xh_table table tr:nth-child(odd) td').css('background','#e3e3e3');
+	$('#xh_table table tr:nth-child(even) td').css('background','#d8d8d8');
 });

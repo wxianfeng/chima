@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111219150136) do
+ActiveRecord::Schema.define(:version => 20111220160236) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -79,6 +79,12 @@ ActiveRecord::Schema.define(:version => 20111219150136) do
 
   add_index "forecast_wsizes", ["height", "weight"], :name => "index_forecast_wsizes_on_height_and_weight"
 
+  create_table "heights", :force => true do |t|
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "items", :force => true do |t|
     t.string   "name"
     t.integer  "brand_id"
@@ -143,6 +149,12 @@ ActiveRecord::Schema.define(:version => 20111219150136) do
     t.integer  "height"
     t.decimal  "weight",       :precision => 10, :scale => 1
     t.string   "style",                                       :default => "thin"
+  end
+
+  create_table "weights", :force => true do |t|
+    t.decimal  "value",      :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

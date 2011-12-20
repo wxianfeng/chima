@@ -95,6 +95,39 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .f_Right .f_RightPic{width:376px; height:204px;}
 .f_Right .f_RightExplain{width:376px; line-height:18px; margin-top:15px;}
 
+/* six */
+.textBox span.pinpai_title{float:left; margin-right:15px;}
+.textBox span.pinpai_select{width:140px; height:22px; line-height:22px; padding:0 27px 0 3px; border:1px solid #599696; background:#ffffff url(../images/sel_2.png) no-repeat right; margin-top:3px; float:left;}
+.textBox ul.pinpai_select_ex{width:170px; border:1px solid #599696; position:absolute; z-index:3; background:#ffffff; margin-top:26px; margin-left:49px; display:none;}
+.textBox ul.pinpai_select_ex li{list-style:none; widows:170px;}
+.textBox ul.pinpai_select_ex li a{width:164px; height:22px; line-height:22px; display:block; text-decoration:none; padding:0 3px; color:#000000;}
+.textBox ul.pinpai_select_ex li a:hover{background:#80b0a4; color:#ffffff;}
+
+.mbody .styBox{margin-top:20px;}
+.styBox .styBox_left{width:158px; float:left;}
+.styBox_left .styBox_leftCell{width:135px; height:30px; line-height:30px; padding-left:23px; font-size:14px; color:#ffffff; font-weight:bold; background:url(../images/nav_bg01.png) no-repeat; float:left; cursor:default;}
+.styBox_left .styBox_leftCell_chosen{width:135px; height:30px; line-height:30px; padding-left:23px; font-size:14px; color:#ffffff; font-weight:bold; background:url(../images/nav_bg02.png) no-repeat; float:left; cursor:default;}
+
+.styBox_left ul.leftCell_ul{width:156px; background:#9cc3b8; margin:0 1px; display:none;}
+.styBox_left ul.leftCell_ul li{list-style:none; border-top:1px dotted #b2d0c8;}
+.styBox_left ul.leftCell_ul li a{width:138px; height:23px; line-height:23px; display:block; text-decoration:none; right no-repeat; color:#ffffff; padding-left:18px;}
+.styBox_left ul.leftCell_ul li a:hover{background:#80b0a4;}
+.styBox_left ul.leftCell_ul li font{float:right; padding-right:8px;}
+
+.styBox .styBox_right{width:225px; float:left; margin-left:-3px;}
+.styBox_right .styBox_right_top{width:180px; height:31px; line-height:29px; background:url(../images/pic_03.png) no-repeat; padding-left:42px; font-size:14px; font-weight:bold; color:#ffffff;}
+.styBox_right .styBox_right_mid{width:218px; background:url(../images/pic_04.png) repeat-y; padding:0 2px;}
+.styBox_right .styBox_right_btm{width:222px; height:4px; background:url(../images/pic_05.png) no-repeat;}
+
+.styBox_right_mid .xinghao_title{width:166px; height:38px; line-height:38px; background:#c2d8d2; padding:0 26px;}
+.xinghao_title ul li{list-style:none; width:55px; height:38px; float:left;}
+.xinghao_title ul li span{float:left;}
+.xinghao_title ul li span input{margin-bottom:0; margin-top:13px; margin-right:5px; padding:0;}
+.styBox_right_mid table{width:100%; height:100%; border:0; text-align:center;}
+.styBox_right_mid table tr{height:38px; line-height:38px;}
+.styBox_right_mid table #xh_th td{font-weight:normal; color:#599696; font-size:14px;}
+.styBox_right_mid table td.width01{width:70px;}
+.styBox_right_mid table .tr_bg{background:#e3e3e3;}
 
 
 

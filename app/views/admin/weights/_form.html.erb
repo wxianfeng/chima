@@ -1,0 +1,11 @@
+<%= form_for([:admin,@weight]) do |f| %>
+  <%= error_messages_for @weight %>
+
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit "提交" %>
+  </div>
+<% end %>

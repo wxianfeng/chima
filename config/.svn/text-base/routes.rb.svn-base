@@ -18,5 +18,7 @@ Chima::Application.routes.draw do
     resources :items
     resources :forecast_wsizes
     resources :forecast_msizes
+    resources :heights
+    resources :weights
   end
 end

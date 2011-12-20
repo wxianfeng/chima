@@ -45,6 +45,9 @@ dir
 forecast_wsizes
 dir
 
+heights
+dir
+
 items
 dir
 
@@ -55,6 +58,9 @@ sizes
 dir
 
 up_sizes
+dir
+
+weights
 dir
 
 welcome
