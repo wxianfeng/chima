@@ -5,3 +5,4 @@ tmp/
 .sass-cache/
 .svn
 .DS_Store
+config/database.yml

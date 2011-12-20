@@ -37,10 +37,10 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: chima_production
+  database: dooxoo_test
   pool: 5
-  username: root
-  password: root
+  username: dooxoo
+  password: 1zhiduxoo
   # socket: /var/run/mysqld/mysqld.sock
   # socket: /tmp/mysql.sock
   host: localhost
