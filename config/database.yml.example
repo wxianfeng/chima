@@ -1,0 +1,36 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: chima_development
+  pool: 5
+  username: root
+  password: root
+  # socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
+  host: localhost
+
+test: &test
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: chima_test
+  pool: 5
+  username: root
+  password: root
+  # socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
+  host: localhost
+
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: chima_production
+  pool: 5
+  username: root
+  password: root
+  # socket: /var/run/mysqld/mysqld.sock
+  # socket: /tmp/mysql.sock
+  host: localhost
