@@ -1,5 +1,7 @@
 # encoding:utf-8
 class User < ActiveRecord::Base
+  belongs_to :height
+  belongs_to :weight
 
   module Style
     THIN = 'thin' # 瘦身

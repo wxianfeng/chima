@@ -12,9 +12,9 @@
           <span id="sg_data" class="b_sele">-- 请选择身高 --</span>
           <span class="b_dwei">cm（厘米）</span>
           <ul id="shengao" class="b_sele_ex">
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectHeight($(this));">160</a></li>
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectHeight($(this));">170</a></li>
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectHeight($(this));">180</a></li>
+            <% Height.where("").each do |height| %>
+              <li><a href="javascript:void(0)" onclick="Chima.Step.selectHeight($(this));" value="<%= height.id %>"><%= height.value %></a></li>
+            <% end %>
           </ul>
         </div>
         <div class="bd_block">
@@ -22,9 +22,9 @@
           <span id="tz_data" class="b_sele">-- 请选择体重 --</span>
           <span class="b_dwei">kg（公斤）</span>
           <ul id="tizhong" class="b_sele_ex" style="_margin-left:-215px;">
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectWeight($(this));">50</a></li>
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectWeight($(this));">60</a></li>
-            <li><a href="javascript:void(0)" onclick="Chima.Step.selectWeight($(this));">70</a></li>
+            <% Weight.where("").each do |weight| %>
+              <li><a href="javascript:void(0)" onclick="Chima.Step.selectWeight($(this));" value="<%= weight.id %>"><%= weight.value %></a></li>
+            <% end %>
           </ul>
         </div>
         <div class="text_one fontSize_01">请尽可能准确，以尽尺寸为准</div>
@@ -34,5 +34,8 @@
   </div>
 </div>
 
-<%= hidden_field_tag "height" , 170 %>
-<%= hidden_field_tag 'weight' , 60 %>
+<% h_175 = Height.find_by_value(170) %>
+<% w_65  = Weight.find_by_value(65) %>
+
+<%= hidden_field_tag "height_id" , h_175.try(:id) %>
+<%= hidden_field_tag 'weight_id' , w_65.try(:id) %>
