@@ -17,7 +17,7 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .header .header_title{float:left; margin-top:28px; font-size:44.67px; color:#599696; font-weight:bold;}
 .header .header_btn{float:right; width:124px; height:33px; font-size:13px; color:#ffffff; line-height:33px; text-align:center; margin-top:53px; background:url(../images/btn_1_0.png) no-repeat; cursor:pointer;}
 
-.main .mbody{width:725px; padding-left:65px; margin-top:30px;} 
+.main .mbody{width:725px; padding-left:65px; margin-top:15px;}
 
 .mbody .text_one{font-size:14px; margin-top:20px;}
 .mbody .sexSty{margin-top:35px;}
@@ -82,8 +82,8 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .mbody .color_03{color:#333333;}
 
 /* five */
-.mbody .f_Left{width:250px; float:left; margin-top:17px;}
-.f_Left .f_LeftTop{width:138px; height:45px; margin-left:25px; margin-bottom:4px;} 
+.mbody .f_Left{width:250px; float:left; margin-top:0px;}
+.f_Left .f_LeftTop{width:138px; height:45px; margin-left:25px; margin-bottom:4px;}
 .f_Left .f_LeftCell{width:250px; height:25px; line-height:25px; margin-bottom:5px;}
 .f_LeftCell span{float:left;}
 .f_LeftCell span.span01{width:105px;}

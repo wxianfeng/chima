@@ -35,6 +35,9 @@
     jumpTo4: function(){
       var style = $("#style").val();
       window.location.href = "/welcome/step4?style=" + style;
+    },
+    jumpTo5: function(){
+      window.location.href = "/welcome/step5";
     }
   };
 
