@@ -8,3 +8,6 @@ tmp/
 config/database.yml
 Gemfile.lock
 db/schema.rb
+public/assets/
+tmp/
+.sass-cache/
