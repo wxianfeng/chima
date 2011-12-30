@@ -10,12 +10,12 @@
       window.location.href = "/welcome/step2?gender=" + gender;
     },
     selectHeight: function(self){
-      var height = self.text();
-      $("#height").val(height);
+      var height = self.attr("value");
+      $("#height_id").val(height);
     },
     selectWeight: function(self){
-      var weight = self.text();
-      $("#weight").val(weight);
+      var weight = self.attr("value");
+      $("#weight_id").val(weight);
     },
     jumpTo3: function(){
       var data = $("#sg_data").text();
@@ -28,13 +28,16 @@
         alert("请选择体重");
         return
       }
-      var height = $("#height").val();
-      var weight = $("#weight").val();
+      var height = $("#height_id").val();
+      var weight = $("#weight_id").val();
       window.location.href = "/welcome/step3?height=" + height + "&weight=" + weight
     },
     jumpTo4: function(){
       var style = $("#style").val();
       window.location.href = "/welcome/step4?style=" + style;
+    },
+    jumpTo5: function(){
+      window.location.href = "/welcome/step5";
     }
   };
 

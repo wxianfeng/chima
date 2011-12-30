@@ -62,9 +62,10 @@ users
   visitor_id int
   visitor_nick varchar
   gender int (0: 男,1: 女)
-  height int 身高
-  weight decimal 体重
+  height_id int 身高
+  weight_id int 体重
   style varchar 偏爱的衣服 (normal: 普通,thin: 瘦身,loose: 宽松)
+  forecast_id int 预测尺寸
 
 forecast_msizes 预估尺寸(男)
   height_id int 身高
@@ -97,5 +98,21 @@ heights 身高
 
 weights 体重
   value decimal(10,2) 体重
+
+actual_sizes 实际尺寸
+  user_id int 用户id
+  chest decimal(10,2) 胸围
+  middle_chest decimal(10,2) 中腰围
+  shoulder decimal(10,2) 肩宽
+  sleeve decimal(10,2) 袖长
+  neck decimal(10,2) 领围
+  arm decimal(10,2) 臂围
+  wrist  decimal(10,2) 腕围
+  down_chest  decinmal(10,2) 腰围
+  ass decimal(10,2) 臀围
+  crosspiece decimal(10,2) 横档
+  foot decimal(10,2) 脚长
+  knee decimal(10,2) 膝围
+
 
 

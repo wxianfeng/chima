@@ -7,7 +7,7 @@
     <div class="mbody">
       <div class="textBox fontSize_03 color_01">我的预估尺寸</div>
       <div class="textBox fontSize_02 color_01">维衣尺码助手推断，你的尺寸也许是：</div>
-      <div class="textBox lineHeight">身高<span class="color_01"> 179cm</span>&nbsp;&nbsp;&nbsp;&nbsp;体重<span class="color_01"> 50kg</span></div>
+      <div class="textBox lineHeight">身高<span class="color_01"> <%= @user.height.value %>cm</span>&nbsp;&nbsp;&nbsp;&nbsp;体重<span class="color_01"> <%= @user.weight.value %>kg</span></div>
       <div class="tableBox">
         <table cellpadding="0" cellspacing="1">
           <tr class="trHeight_01 fontSize_04">
@@ -28,15 +28,15 @@
           </tr>
           <tr class="trHeight_03">
             <td class="fontSize_04">预估尺寸</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= @forecast.chest %></td>
+            <td><%= @forecast.middle_chest %></td>
+            <td><%= @forecast.shoulder %></td>
+            <td><%= @forecast.sleeve %></td>
+            <td><%= @forecast.neck %></td>
+            <td><%= @forecast.down_chest %></td>
+            <td><%= @forecast.ass %></td>
+            <td><%= @forecast.crosspiece %></td>
+            <td><%= @forecast.foot %></td>
           </tr>
         </table>
       </div>
@@ -45,7 +45,7 @@
         <span>说明：</span>
         <span class="indent">预估尺寸是尺码助手基于经验推测出来的尺寸，未必会很准确。当然，基于预估尺寸，<br />你的服装采购也可比以前更准确啦。你可以自己量体或者其他方式获得准确尺寸。</span>
       </p>
-      <div class="button_three margin_03">我要开始获得准确尺寸</div>
+      <div class="button_three margin_03" onclick="Chima.Step.jumpTo5();">我要开始获得准确尺寸</div>
       <div class="textBox margin_00 padding_01 color_02">基于预估尺寸，你可以查看</div>
       <div>
         <div class="button_four">各类型服饰最佳尺码</div>
