@@ -29,12 +29,25 @@ class WelcomeController < ApplicationController
     weight_forecasts = ForecastMsize.where(:weight_id=>@user.weight_id)
     forecasts = (height_forecasts + weight_forecasts ).uniq
     arr = []
+    ##
+    # 预估尺寸算法
+    # 身高差值 + 体重差值 最小的
     forecasts.each_with_index do |forecast,index|
       arr << (forecast.height.value - @user.height.value).abs + (forecast.weight.value - @user.weight.value).abs
     end
     min = arr.min
     index = arr.find_index(min)
     @forecast = forecasts[index.to_i]
+    @user.forecast_id = @forecast.id
+    @user.save
+  end
+
+  def step5
+    @forecast = if @user.gender == 0
+      ForecastMsize.find(@user.forecast_id)
+    else
+      ForecastWsize.find(@user.forecast_id)
+    end
   end
 
   protected

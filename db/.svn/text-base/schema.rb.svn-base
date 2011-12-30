@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222140426) do
+ActiveRecord::Schema.define(:version => 20111226160457) do
+
+  create_table "actual_sizes", :force => true do |t|
+    t.integer  "user_id"
+    t.decimal  "chest",        :precision => 10, :scale => 2
+    t.decimal  "middle_chest", :precision => 10, :scale => 2
+    t.decimal  "shoulder",     :precision => 10, :scale => 2
+    t.decimal  "sleeve",       :precision => 10, :scale => 2
+    t.decimal  "neck",         :precision => 10, :scale => 2
+    t.decimal  "arm",          :precision => 10, :scale => 2
+    t.decimal  "wrist",        :precision => 10, :scale => 2
+    t.decimal  "down_chest",   :precision => 10, :scale => 2
+    t.decimal  "ass",          :precision => 10, :scale => 2
+    t.decimal  "crosspiece",   :precision => 10, :scale => 2
+    t.decimal  "foot",         :precision => 10, :scale => 2
+    t.decimal  "knee",         :precision => 10, :scale => 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -151,6 +169,7 @@ ActiveRecord::Schema.define(:version => 20111222140426) do
     t.integer  "height_id"
     t.integer  "weight_id"
     t.string   "style",        :default => "thin"
+    t.integer  "forecast_id"
   end
 
   create_table "weights", :force => true do |t|

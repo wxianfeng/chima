@@ -151,15 +151,7 @@ deleted
 
 forecast_msizes.js.coffee
 file
-626
-
-
-delete
-2011-12-19T15:08:47.000000Z
-efe5c0cd6df81434517a466433aaa853
-2011-12-19T15:16:07.785964Z
-626
-wxianfeng
+639
 
 
 
@@ -179,21 +171,11 @@ wxianfeng
 
 
 
-
-
-229
+deleted
 
 forecast_wsizes.js.coffee
 file
-626
-
-
-delete
-2011-12-19T15:09:21.000000Z
-efe5c0cd6df81434517a466433aaa853
-2011-12-19T15:16:07.785964Z
-626
-wxianfeng
+639
 
 
 
@@ -213,9 +195,7 @@ wxianfeng
 
 
 
-
-
-229
+deleted
 
 global.js
 file
@@ -253,15 +233,7 @@ wxianfeng
 
 heights.js.coffee
 file
-633
-
-
-delete
-2011-12-20T15:45:54.000000Z
-efe5c0cd6df81434517a466433aaa853
-2011-12-20T16:11:39.318512Z
-633
-wxianfeng
+639
 
 
 
@@ -281,9 +253,7 @@ wxianfeng
 
 
 
-
-
-229
+deleted
 
 items.js.coffee
 file
@@ -461,14 +431,14 @@ deleted
 
 step.js
 file
-637
+639
 
 
 
-2011-12-22T14:11:04.000000Z
-d5666588abfed8360c9a97973b1d0a41
-2011-12-22T15:38:37.094160Z
-637
+2011-12-23T16:02:54.000000Z
+775dead6987443944c63df09c2b0bb79
+2011-12-26T16:09:42.470659Z
+639
 wxianfeng
 
 
@@ -491,7 +461,7 @@ wxianfeng
 
 
 
-1108
+1187
 
 up_sizes.js.coffee
 file
@@ -553,15 +523,7 @@ wxianfeng
 
 weights.js.coffee
 file
-633
-
-
-delete
-2011-12-20T16:02:36.000000Z
-efe5c0cd6df81434517a466433aaa853
-2011-12-20T16:11:39.318512Z
-633
-wxianfeng
+639
 
 
 
@@ -581,9 +543,7 @@ wxianfeng
 
 
 
-
-
-229
+deleted
 
 welcome.js.coffee
 file
