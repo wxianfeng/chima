@@ -38,6 +38,20 @@
     },
     jumpTo5: function(){
       window.location.href = "/welcome/step5";
+    },
+    actualSize: function(type){
+      var value = $("#"+type).val();
+     $.ajax({
+       url: "/welcome/actual_size",
+       type: "POST",
+       data: { 'column': type,'value': value },
+       success: function(data){
+         if(data.retCode)
+           alert("成功");
+         else
+           alert("失败");
+       }
+     });
     }
   };
 

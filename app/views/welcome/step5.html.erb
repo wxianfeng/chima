@@ -10,75 +10,75 @@
           <div class="f_LeftTop"><img src="/assets/pic_01.png" border="0" /></div>
           <div class="f_LeftCell">
             <span class="span01">胸围: <%= @forecast.chest %></span>
-            <span class="span02"><input id="lingwei" name="lingwei" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="chest" name="lingwei" class="i_sty" type="text" value="<%= @actual_size.try(:chest) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('chest')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">中腰围: <%= @forecast.middle_chest %></span>
-            <span class="span02"><input id="xiongwei" name="xiongwei" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="middle_chest" name="xiongwei" class="i_sty" type="text" value="<%= @actual_size.try(:middle_chest) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('middle_chest')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">肩宽: <%= @forecast.shoulder   %></span>
-            <span class="span02"><input id="jiawei" name="jiawei" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="shoulder" name="jiawei" class="i_sty" type="text" value="<%= @actual_size.try(:shoulder) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('shoulder')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">袖长: <%= @forecast.sleeve %></span>
-            <span class="span02"><input id="yichang" name="yichang" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="sleeve" name="yichang" class="i_sty" type="text" value="<%= @actual_size.try(:sleeve) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('sleeve')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">领围: <%= @forecast.neck   %></span>
-            <span class="span02"><input id="duwei" name="duwei" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="neck" name="duwei" class="i_sty" type="text" value="<%= @actual_size.try(:neck) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('neck')">确认</span>
           </div>
           <div class="f_LeftCell">
-            <span class="span01">臂围: <%# = @forecast.ass %></span>
-            <span class="span02"><input id="tunwei" name="tunwei" class="i_sty" type="text" /></span>
+            <span class="span01">臂围: <%# = @forecast.arm %></span>
+            <span class="span02"><input id="arm" name="tunwei" class="i_sty" type="text" value="<%= @actual_size.try(:arm) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('arm')">确认</span>
           </div>
           <div class="f_LeftCell">
-            <span class="span01">腕围: <%# = @forecast.shoulder %></span>
-            <span class="span02"><input id="jiankuan" name="jiankuan" class="i_sty" type="text" /></span>
+            <span class="span01">腕围: <%# = @forecast.wrist%></span>
+            <span class="span02"><input id="wrist" name="jiankuan" class="i_sty" type="text" value="<%= @actual_size.try(:wrist) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('wrist')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">腰围: <%= @forecast.down_chest %></span>
-            <span class="span02"><input id="xiuchang" name="xiuchang" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="down_chest" name="xiuchang" class="i_sty" type="text" value="<%= @actual_size.try(:down_chest) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('down_chest')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">臀围: <%=  @forecast.ass %></span>
-            <span class="span02"><input id="xiufei" name="xiufei" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="ass" name="xiufei" class="i_sty" type="text" value="<%= @actual_size.try(:ass) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('ass')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">横裆: <%= @forecast.crosspiece %></span>
-            <span class="span02"><input id="xiukou" name="xiukou" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="crosspiece" name="xiukou" class="i_sty" type="text" value="<%= @actual_size.try(:crosspiece) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('crosspiece')">确认</span>
           </div>
           <div class="f_LeftCell">
             <span class="span01">脚长: <%= @forecast.foot %></span>
-            <span class="span02"><input id="xiukou" name="xiukou" class="i_sty" type="text" /></span>
+            <span class="span02"><input id="foot" name="xiukou" class="i_sty" type="text" value="<%= @actual_size.try(:foot) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('foot')">确认</span>
           </div>
           <div class="f_LeftCell">
-            <span class="span01">膝围: <%# =  %></span>
-            <span class="span02"><input id="xiukou" name="xiukou" class="i_sty" type="text" /></span>
+            <span class="span01">膝围: <%#= @forecast.knee %></span>
+            <span class="span02"><input id="knee" name="xiukou" class="i_sty" type="text" value="<%= @actual_size.try(:knee) %>"/></span>
             <span>cm</span>
-            <span class="span03">确认</span>
+            <span class="span03" onclick="Chima.Step.actualSize('knee')">确认</span>
           </div>
         </div>
         <div class="f_Right">

@@ -2,6 +2,7 @@
 class User < ActiveRecord::Base
   belongs_to :height
   belongs_to :weight
+  has_one :actual_size
 
   module Style
     THIN = 'thin' # 瘦身

@@ -48,6 +48,22 @@ class WelcomeController < ApplicationController
     else
       ForecastWsize.find(@user.forecast_id)
     end
+    @actual_size = @user.actual_size
+  end
+
+  def actual_size
+    key = params[:column]
+    if @user.actual_size
+      actual_size = @user.actual_size
+    else
+      actual_size = ActualSize.new({ user_id: @user.id })
+    end
+    actual_size.send("#{key}=",params[:value])
+    if actual_size.save
+      render_json_ok
+    else
+      render_json_fail
+    end
   end
 
   protected
