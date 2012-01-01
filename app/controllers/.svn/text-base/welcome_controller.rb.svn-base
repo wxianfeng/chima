@@ -51,6 +51,14 @@ class WelcomeController < ApplicationController
     @actual_size = @user.actual_size
   end
 
+  def step6
+
+  end
+
+  def step7
+    
+  end
+
   def actual_size
     key = params[:column]
     if @user.actual_size
