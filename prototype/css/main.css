@@ -110,7 +110,7 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 
 .styBox_left ul.leftCell_ul{width:156px; background:#9cc3b8; margin:0 1px; display:none;}
 .styBox_left ul.leftCell_ul li{list-style:none; border-top:1px dotted #b2d0c8;}
-.styBox_left ul.leftCell_ul li a{width:138px; height:23px; line-height:23px; display:block; text-decoration:none; right no-repeat; color:#ffffff; padding-left:18px;}
+.styBox_left ul.leftCell_ul li a{width:138px; height:23px; line-height:23px; display:block; text-decoration:none;color:#ffffff; padding-left:18px;}
 .styBox_left ul.leftCell_ul li a:hover{background:#80b0a4;}
 .styBox_left ul.leftCell_ul li font{float:right; padding-right:8px;}
 
