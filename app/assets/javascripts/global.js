@@ -2,20 +2,24 @@
 
 $(document).ready(function(){
   $('#sexSty,#specs img').click(function(event){
-    if(event.target.id=="shoushen"){
+    if(event.target.id=="thin"){
       $("#style").val('thin');
-      $('#kuansong,#putong').attr("src","/assets/radio_2_0.png");
-      $('#shoushen').attr("src","/assets/radio_1_0.png");
-    }else if(event.target.id=="kuansong"){
+      $('#loose,#normal,#suit').attr("src","/assets/radio_2_0.png");
+      $('#thin').attr("src","/assets/radio_1_0.png");
+    }else if(event.target.id=="loose"){
       $("#style").val('loose');
-      $('#shoushen,#putong').attr("src","/assets/radio_2_0.png");
-      $('#kuansong').attr("src","/assets/radio_1_0.png");
-    }else if(event.target.id=="putong"){
+      $('#thin,#normal,#suit').attr("src","/assets/radio_2_0.png");
+      $('#loose').attr("src","/assets/radio_1_0.png");
+    }else if(event.target.id=="normal"){
       $("#style").val('normal');
-      $('#shoushen,#kuansong').attr("src","/assets/radio_2_0.png");
-      $('#putong').attr("src","/assets/radio_1_0.png");
+      $('#thin,#suit,#loose').attr("src","/assets/radio_2_0.png");
+      $('#normal').attr("src","/assets/radio_1_0.png");
+    }else if(event.target.id=="suit"){
+      $("#style").val('suit');
+      $('#thin,#normal,#loose').attr("src","/assets/radio_2_0.png");
+      $('#suit').attr("src","/assets/radio_1_0.png");
     }
-
+    
     if(event.target.id=="male"){
       $('#female').attr("src","/assets/radio_2_0.png");
       $('#male').attr("src","/assets/radio_1_0.png");

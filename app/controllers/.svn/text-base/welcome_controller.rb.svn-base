@@ -25,8 +25,13 @@ class WelcomeController < ApplicationController
 
   def step4
     @user.update_attribute :style , params[:style]
-    height_forecasts = ForecastMsize.where(:height_id=>@user.height_id)
-    weight_forecasts = ForecastMsize.where(:weight_id=>@user.weight_id)
+    if @user.gender == 0
+      height_forecasts = ForecastMsize.where(:height_id=>@user.height_id)
+      weight_forecasts = ForecastMsize.where(:weight_id=>@user.weight_id)
+    else
+      height_forecasts = ForecastWsize.where(:height_id=>@user.height_id)
+      weight_forecasts = ForecastWsize.where(:weight_id=>@user.weight_id)
+    end
     forecasts = (height_forecasts + weight_forecasts ).uniq
     arr = []
     ##
@@ -56,7 +61,7 @@ class WelcomeController < ApplicationController
   end
 
   def step7
-    
+
   end
 
   def actual_size

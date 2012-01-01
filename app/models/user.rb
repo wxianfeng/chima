@@ -5,9 +5,10 @@ class User < ActiveRecord::Base
   has_one :actual_size
 
   module Style
-    THIN = 'thin' # 瘦身
-    NORMAL = 'normal' # 普通
     LOOSE = 'loose' # 宽松
+    NORMAL = 'normal' # 标准
+    SUIT = 'suit' # 合适
+    THIN = 'thin' # 紧身
   end
 
   def self.find_or_create(visitor)
