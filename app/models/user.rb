@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   belongs_to :height
   belongs_to :weight
   has_one :actual_size
+  belongs_to :forecast_msize
+  belongs_to :forecast_wsize
 
   module Style
     LOOSE = 'loose' # 宽松
@@ -20,6 +22,29 @@ class User < ActiveRecord::Base
       user.save
     end
     user
+  end
+
+  def chest_down_chest_diff
+    forecast_size = if self.gender == 0
+      self.forecast_msize
+    else
+      self.forecast_wsize
+    end
+    actual_size = self.actual_size
+    chest = self.chest
+    down_chest = actual_size.down_chest || forecast_size.down_chest
+    diff = chest - down_chest
+    diff
+  end
+
+  def chest
+    forecast_size = if self.gender == 0
+      self.forecast_msize
+    else
+      self.forecast_wsize
+    end
+    actual_size = self.actual_size
+    actual_size.try(:chest) || forecast_size.chest
   end
 
 end

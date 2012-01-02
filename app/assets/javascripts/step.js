@@ -61,6 +61,17 @@
             alert("失败");
         }
       });
+    },
+    loadXifu: function(){
+      $.ajax({
+        url: "/welcome/load_xifu",
+        type: 'GET',
+        success: function(data){
+          if ($("#xifu").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

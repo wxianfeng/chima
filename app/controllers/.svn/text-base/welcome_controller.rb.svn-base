@@ -79,6 +79,10 @@ class WelcomeController < ApplicationController
     end
   end
 
+  def load_xifu
+    render :partial=>"xifu"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])
