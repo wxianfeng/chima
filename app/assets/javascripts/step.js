@@ -72,6 +72,17 @@
           $("#right_top").after(data);
         }
       });
+    },
+    changeXifuStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_xifu",
+        type: "GET",
+        data: { 'style': style },
+        success: function(data){
+          $("#xifu_content").remove();
+          $("#right_top").after(data);
+        }
+      })
     }
   };
 

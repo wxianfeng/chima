@@ -80,6 +80,10 @@ class WelcomeController < ApplicationController
   end
 
   def load_xifu
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
     render :partial=>"xifu"
   end
 

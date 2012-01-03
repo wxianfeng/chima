@@ -25,11 +25,6 @@ class User < ActiveRecord::Base
   end
 
   def chest_down_chest_diff
-    forecast_size = if self.gender == 0
-      self.forecast_msize
-    else
-      self.forecast_wsize
-    end
     actual_size = self.actual_size
     chest = self.chest
     down_chest = actual_size.down_chest || forecast_size.down_chest
@@ -37,14 +32,37 @@ class User < ActiveRecord::Base
     diff
   end
 
+  # 胸围
   def chest
-    forecast_size = if self.gender == 0
+    actual_size = self.actual_size
+    actual_size.try(:chest) || forecast_size.chest
+  end
+
+  # 腰围
+  def down_chest
+    actual_size = self.actual_size
+    actual_size.try(:down_chest) || forecast_size.down_chest
+  end
+
+  # 肩宽
+  def shoulder
+    actual_size = self.actual_size
+    actual_size.try(:shoulder) || forecast_size.shoulder
+  end
+
+  # 袖长
+  def sleeve
+    actual_size = self.actual_size
+    actual_size.try(:sleeve) || forecast_size.sleeve
+  end
+
+  def forecast_size
+    fs = if self.gender == 0
       self.forecast_msize
     else
       self.forecast_wsize
     end
-    actual_size = self.actual_size
-    actual_size.try(:chest) || forecast_size.chest
+    fs
   end
 
 end

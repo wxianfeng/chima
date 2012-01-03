@@ -119,10 +119,10 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .styBox_right .styBox_right_mid{width:218px; background:url(/assets/pic_04.png) repeat-y; padding:0 2px;}
 .styBox_right .styBox_right_btm{width:222px; height:4px; background:url(/assets/pic_05.png) no-repeat;}
 
-.styBox_right_mid .xinghao_title{width:166px; height:38px; line-height:38px; background:#c2d8d2; padding:0 26px;}
-.xinghao_title ul li{list-style:none; width:55px; height:38px; float:left;}
+.styBox_right_mid .xinghao_title{width:204px; height:38px; line-height:38px; background:#c2d8d2; padding:0 7px;}
+.xinghao_title ul li{list-style:none; width:51px; height:38px; float:left;}
 .xinghao_title ul li span{float:left;}
-.xinghao_title ul li span input{margin-bottom:0; margin-top:13px; margin-right:5px; padding:0;}
+.xinghao_title ul li span input{margin-bottom:0; margin-top:13px; padding:0;}
 .styBox_right_mid table{width:100%; height:100%; border:0; text-align:center;}
 .styBox_right_mid table tr{height:38px; line-height:38px;}
 .styBox_right_mid table #xh_th td{font-weight:normal; color:#599696; font-size:14px;}
