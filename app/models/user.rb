@@ -3,14 +3,14 @@ class User < ActiveRecord::Base
   belongs_to :height
   belongs_to :weight
   has_one :actual_size
-  belongs_to :forecast_msize
-  belongs_to :forecast_wsize
+  belongs_to :forecast_msize , :foreign_key => "forecast_id"
+  belongs_to :forecast_wsize , :foreign_key => "forecast_id"
 
   module Style
     LOOSE = 'loose' # 宽松
     NORMAL = 'normal' # 标准
-    SUIT = 'suit' # 合适
-    THIN = 'thin' # 紧身
+    FIT = 'fit' # 合适
+    TIGHT = 'tight' # 紧身
   end
 
   def self.find_or_create(visitor)
@@ -24,11 +24,11 @@ class User < ActiveRecord::Base
     user
   end
 
-  def chest_down_chest_diff
-    actual_size = self.actual_size
+  # 胸腰差 = 胸围 - 中腰围
+  def chest_middle_chest_diff
     chest = self.chest
-    down_chest = actual_size.down_chest || forecast_size.down_chest
-    diff = chest - down_chest
+    middle_chest = self.middle_chest
+    diff = chest - middle_chest
     diff
   end
 
@@ -38,10 +38,10 @@ class User < ActiveRecord::Base
     actual_size.try(:chest) || forecast_size.chest
   end
 
-  # 腰围
-  def down_chest
+  # 中腰围
+  def middle_chest
     actual_size = self.actual_size
-    actual_size.try(:down_chest) || forecast_size.down_chest
+    actual_size.try(:middle_chest) || forecast_size.middle_chest
   end
 
   # 肩宽

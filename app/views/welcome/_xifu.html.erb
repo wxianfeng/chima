@@ -13,11 +13,11 @@
             <span>标准</span>
           </li>
           <li>
-            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXifuStyle('<%= User::Style::SUIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::SUIT %>/></span>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXifuStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
             <span>合体</span>
           </li>
           <li>
-            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXifuStyle('<%= User::Style::THIN %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::THIN %>/></span>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXifuStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
             <span>紧身</span>
           </li>
         </ul>
@@ -26,23 +26,23 @@
         <table cellpadding="0" cellspacing="0">
           <tr>
             <td class="width01">胸围</td>
-            <td><%= show_xifu_chest(@user) %></td>
+            <td><%= show_suit_chest(@user) %></td>
           </tr>
           <tr>
             <td class="width01">腰围</td>
-            <td><%= show_xifu_down_chest(@user) %></td>
+            <td><%= show_suit_middle_chest(@user) %></td>
           </tr>
           <tr>
             <td class="width01">下摆</td>
-            <td><%= show_xifu_xiabai(@user) %></td>
+            <td><%= show_suit_xiabai(@user) %></td>
           </tr>
           <tr>
             <td class="width01">前长</td>
-            <td><%= show_xifu_front_length(@user) %></td>
+            <td><%= show_suit_front_length(@user) %></td>
           </tr>
           <tr>
             <td class="width01">后长</td>
-            <td><%= show_xifu_back_length(@user) %></td>
+            <td><%= show_suit_back_length(@user) %></td>
           </tr>
           <tr>
             <td class="width01">肩宽</td>

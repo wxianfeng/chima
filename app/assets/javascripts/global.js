@@ -3,7 +3,7 @@
 $(document).ready(function(){
   $('#sexSty,#specs img').click(function(event){
     if(event.target.id=="thin"){
-      $("#style").val('thin');
+      $("#style").val('tight');
       $('#loose,#normal,#suit').attr("src","/assets/radio_2_0.png");
       $('#thin').attr("src","/assets/radio_1_0.png");
     }else if(event.target.id=="loose"){
@@ -15,11 +15,11 @@ $(document).ready(function(){
       $('#thin,#suit,#loose').attr("src","/assets/radio_2_0.png");
       $('#normal').attr("src","/assets/radio_1_0.png");
     }else if(event.target.id=="suit"){
-      $("#style").val('suit');
+      $("#style").val('fit');
       $('#thin,#normal,#loose').attr("src","/assets/radio_2_0.png");
       $('#suit').attr("src","/assets/radio_1_0.png");
     }
-    
+
     if(event.target.id=="male"){
       $('#female').attr("src","/assets/radio_2_0.png");
       $('#male').attr("src","/assets/radio_1_0.png");
