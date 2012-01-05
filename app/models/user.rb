@@ -56,6 +56,30 @@ class User < ActiveRecord::Base
     actual_size.try(:sleeve) || forecast_size.sleeve
   end
 
+  # 腰围
+  def down_chest
+    actual_size = self.actual_size
+    actual_size.try(:down_chest) || forecast_size.down_chest
+  end
+
+  # 臀围
+  def ass
+    actual_size = self.actual_size
+    actual_size.try(:ass) || forecast_size.ass
+  end
+
+  # 横档
+  def crosspiece
+    actual_size = self.actual_size
+    actual_size.try(:crosspiece) || forecast_size.crosspiece
+  end
+
+  # 裤长
+  def foot
+    actual_size = self.actual_size
+    actual_size.try(:foot) || forecast_size.foot
+  end
+
   def forecast_size
     fs = if self.gender == 0
       self.forecast_msize

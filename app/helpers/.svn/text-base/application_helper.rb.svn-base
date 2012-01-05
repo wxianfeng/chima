@@ -186,4 +186,94 @@ module ApplicationHelper
     r
   end
 
+  # 西裤腰围
+  def show_xiku_down_chest(user)
+    user.down_chest
+  end
+
+  # 西裤臀围
+  def show_xiku_ass(user)
+    r = case user.style
+    when User::Style::LOOSE
+      user.ass + 11
+    when User::Style::NORMAL
+      user.ass + 8
+    when User::Style::FIT
+      user.ass + 6
+    when User::Style::TIGHT
+      user.ass + 4
+    end
+    r
+  end
+
+  # 西裤总档
+  def show_xiku_zongdan(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then 61
+    when 162..163 then 62
+    when 164..165 then 63
+    when 166..167 then 64
+    when 168..169 then 65
+    when 170..171 then 66
+    when 172..173 then 67
+    when 174..175 then 68
+    when 176..177 then 69
+    when 178..179 then 70
+    when 181..182 then 71
+    when 182..183 then 72
+    when 184..185 then 73
+    when 186..187 then 74
+    when 188..190 then 75
+    else
+      61
+    end
+    if user.down_chest > 90 and user.down_chest <= 100
+      r = r + 3
+    elsif user.down_chest > 100 and user.down_chest <= 110
+      r = r + 6
+    elsif user.down_chest > 110 and user.down_chest <= 120
+      r = r + 9
+    elsif user.down_chest > 120 and user.down_chest <= 130
+      r = r + 12
+    elsif user.down_chest > 130 and user.down_chest <= 140
+      r = r + 15
+    elsif user.down_chest > 140
+      r = r + 18
+    end
+    r
+  end
+
+  # 西裤横档
+  def show_xiku_crosspiece(user)
+    r = case user.style
+    when User::Style::LOOSE
+      user.crosspiece + 10
+    when User::Style::NORMAL
+      user.crosspiece + 8
+    when User::Style::FIT
+      user.crosspiece + 6
+    when User::Style::TIGHT
+      user.crosspiece + 4
+    end
+    r
+  end
+
+  # 西裤裤长
+  def show_xiku_foot(user)
+    user.foot
+  end
+
+  # 西裤裤口
+  def show_xiku_kukou(user)
+    case show_xiku_crosspiece(user)
+    when 0..60 then 20
+    when 61..64 then 21
+    when 64..68 then 22
+    when 68..72 then 23
+    when 72..76 then 24
+    when 76..10000 then 25
+    end
+  end
+
 end

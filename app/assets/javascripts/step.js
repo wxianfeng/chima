@@ -83,6 +83,28 @@
           $("#right_top").after(data);
         }
       })
+    },
+    loadXiku: function(){
+      $.ajax({
+        url: "/welcome/load_xiku",
+        type: "GET",
+        success: function(data){
+          if ($("#xiku_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeXikuStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_xiku",
+        type: "GET",
+        data: { 'style': style },
+        success: function(data){
+          $("#xiku_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

@@ -1,0 +1,56 @@
+<div id="xiku_content">
+  <div id="xinghao">
+    <div class="styBox_right_top" id="xiku">西裤</div>
+    <div class="styBox_right_mid">
+      <div class="xinghao_title">
+        <ul>
+          <li>
+            <span><input id="sx_biaozhuan" onclick="Chima.Step.changeXikuStyle('<%= User::Style::LOOSE %>');" type="radio" name="shenxing" <%= 'checked' if @user.style == User::Style::LOOSE %>/></span>
+            <span>宽松</span>
+          </li>
+          <li>
+            <span><input id="sx_shoushen" type="radio" onclick="Chima.Step.changeXikuStyle('<%= User::Style::NORMAL %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::NORMAL %>/></span>
+            <span>标准</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXikuStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
+            <span>合体</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeXikuStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
+            <span>紧身</span>
+          </li>
+        </ul>
+      </div>
+      <div id="xh_table">
+        <table cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="width01">腰围</td>
+            <td><%= show_xiku_down_chest(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">臀围</td>
+            <td><%= show_xiku_ass(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">总裆</td>
+            <td><%= show_xiku_zongdan(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">横档</td>
+            <td><%= show_xiku_crosspiece(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">裤长</td>
+            <td><%= show_xiku_foot(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">裤口</td>
+            <td><%= show_xiku_kukou(@user) %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="styBox_right_btm"></div>
+  </div>
+</div>
