@@ -57,6 +57,8 @@ module ApplicationHelper
     end
     r
   end
+  # 正装衬衫 胸围
+  alias_method :show_dressshirt_chest , :show_suit_chest
 
   # 西服腰围
   def show_suit_middle_chest(user)
@@ -116,6 +118,19 @@ module ApplicationHelper
     end
     r
   end
+  # 正装衬衫 腰围
+  alias_method :show_dressshirt_middle_chest , :show_suit_middle_chest
+
+  def show_real_dressshirt_chest(user)
+    chest = show_dressshirt_chest(user) - 10
+    middle_chest = show_dressshirt_middle_chest(user)
+    r = if chest > middle_chest
+      chest
+    else
+      middle_chest
+    end
+    r
+  end
 
   # 西服下摆
   def show_suit_xiabai(user)
@@ -135,6 +150,8 @@ module ApplicationHelper
     end
     r
   end
+  # 正装下摆
+  alias_method :show_dressshirt_xiabai , :show_suit_xiabai
 
   # 西服前长
   def show_suit_front_length(user)
@@ -274,6 +291,44 @@ module ApplicationHelper
     when 72..76 then 24
     when 76..10000 then 25
     end
+  end
+
+  # 正装衬衫 衣长
+  def show_dressshirt_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then 70
+    when 162..163 then 71
+    when 164..165 then 72
+    when 166..167 then 73
+    when 168..169 then 74
+    when 170..171 then 75
+    when 172..173 then 76
+    when 174..175 then 77
+    when 176..177 then 78
+    when 178..179 then 79
+    when 181..182 then 80
+    when 182..183 then 81
+    when 184..187 then 82
+    when 188..189 then 83
+    when 190 then 84
+    else
+      70
+    end
+    r
+  end
+
+  # 正装衬衫 短袖长
+  def show_dressshirt_short_length(user)
+    height = user.height.value
+    r = case height
+    when 160..167 then 23
+    when 168..171 then 24
+    when 172..179 then 25
+    when 180..187 then 26
+    when 188..190 then 27
+    end
+    r
   end
 
 end

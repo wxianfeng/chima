@@ -80,6 +80,18 @@ class User < ActiveRecord::Base
     actual_size.try(:foot) || forecast_size.foot
   end
 
+  # 领围
+  def neck
+    actual_size = self.actual_size
+    actual_size.try(:neck) || forecast_size.neck
+  end
+
+  # 腕围
+  def wrist
+    actual_size = self.actual_size
+    actual_size.try(:wrist) || 0
+  end
+
   def forecast_size
     fs = if self.gender == 0
       self.forecast_msize

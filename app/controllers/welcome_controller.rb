@@ -95,6 +95,14 @@ class WelcomeController < ApplicationController
     render :partial => "xiku"
   end
 
+  def load_dressshirt
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "dressshirt"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])

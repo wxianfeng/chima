@@ -77,7 +77,9 @@
       $.ajax({
         url: "/welcome/load_xifu",
         type: "GET",
-        data: { 'style': style },
+        data: {
+          'style': style
+        },
         success: function(data){
           $("#xifu_content").remove();
           $("#right_top").after(data);
@@ -99,9 +101,35 @@
       $.ajax({
         url: "/welcome/load_xiku",
         type: "GET",
-        data: { 'style': style },
+        data: {
+          'style': style
+        },
         success: function(data){
           $("#xiku_content").remove();
+          $("#right_top").after(data);
+        }
+      });
+    },
+    loadDressShirt: function(){
+      $.ajax({
+        url: "/welcome/load_dressshirt",
+        type: "GET",
+        success: function(data){
+          if ($("#dressshirt_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeDressshirtStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_dressshirt",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#dressshirt_content").remove();
           $("#right_top").after(data);
         }
       });
