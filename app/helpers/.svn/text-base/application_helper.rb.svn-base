@@ -496,4 +496,43 @@ module ApplicationHelper
     r
   end
 
+  # polo 衫 胸围
+  def show_polo_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.chest + 15
+    elsif user.style == User::Style::NORMAL
+      user.chest + 12
+    elsif user.style == User::Style::FIT
+      user.chest + 9
+    elsif user.style == User::Style::TIGHT
+      user.chest + 6
+    end
+    r
+  end
+
+  # polo 衣长
+  def show_polo_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then 65
+    when 162..163 then 66
+    when 164..165 then 66
+    when 166..167 then 67
+    when 168..169 then 69
+    when 170..171 then 70
+    when 172..173 then 71
+    when 174..175 then 72
+    when 176..177 then 73
+    when 178..179 then 74
+    when 181..182 then 75
+    when 182..183 then 76
+    when 184..187 then 77
+    when 188..189 then 78
+    when 190 then 79
+    else
+      65
+    end
+    r
+  end
+
 end

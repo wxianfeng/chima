@@ -1,0 +1,48 @@
+<div id="polo_content">
+  <div id="xinghao">
+    <div class="styBox_right_top" id="xifu">POLO衫</div>
+    <div class="styBox_right_mid">
+      <div class="xinghao_title">
+        <ul>
+          <li>
+            <span><input id="sx_biaozhuan" onclick="Chima.Step.changePoloStyle('<%= User::Style::LOOSE %>');" type="radio" name="shenxing" <%= 'checked' if @user.style == User::Style::LOOSE %>/></span>
+            <span>宽松</span>
+          </li>
+          <li>
+            <span><input id="sx_shoushen" type="radio" onclick="Chima.Step.changePoloStyle('<%= User::Style::NORMAL %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::NORMAL %>/></span>
+            <span>标准</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changePoloStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
+            <span>合体</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changePoloStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
+            <span>紧身</span>
+          </li>
+        </ul>
+      </div>
+      <div id="xh_table">
+        <table cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="width01">胸围</td>
+            <td><%= show_polo_chest(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">衣长</td>
+            <td><%= show_polo_length(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">肩宽</td>
+            <td><%= @user.shoulder %></td>
+          </tr>
+          <tr>
+            <td class="width01">袖长</td>
+            <td><%= @user.sleeve + 1 %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="styBox_right_btm"></div>
+  </div>
+</div>

@@ -181,6 +181,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadPolo: function(){
+      $.ajax({
+        url: "/welcome/load_polo",
+        type: "GET",
+        success: function(data){
+          if ($("#polo_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changePoloStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_polo",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#polo_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 
