@@ -331,4 +331,116 @@ module ApplicationHelper
     r
   end
 
+  # 休闲衬衫 胸围
+  def show_casualshirt_chest(user)
+    if user.style == User::Style::LOOSE
+      user.style = User::Style::NORMAL
+    elsif user.style == User::Style::NORMAL
+      user.style = User::Style::FIT
+    elsif user.style == User::Style::FIT
+      user.style = User::Style::TIGHT
+    end
+    r = case user.chest_middle_chest_diff
+    when 13..16
+      if user.style == User::Style::LOOSE
+        user.chest + 18
+      elsif user.style == User::Style::NORMAL
+        user.chest + 15
+      elsif user.style == User::Style::FIT
+        user.chest + 12
+      elsif user.style == User::Style::TIGHT
+        user.chest + 9
+      end
+    when 5..12
+      if user.style == User::Style::LOOSE
+        user.chest + 17
+      elsif user.style == User::Style::NORMAL
+        user.chest + 14
+      elsif user.style == User::Style::FIT
+        user.chest + 11
+      elsif user.style == User::Style::TIGHT
+        user.chest + 9
+      end
+    when -3..4
+      if user.style == User::Style::LOOSE
+        user.chest + 16
+      elsif user.style == User::Style::NORMAL
+        user.chest + 13
+      elsif user.style == User::Style::FIT
+        user.chest + 10
+      elsif user.style == User::Style::TIGHT
+        user.chest + 8
+      end
+    else
+      user.chest
+    end
+    r
+  end
+
+  # 休闲衬衫 腰围
+  def show_casualshirt_middle_chest(user)
+    if user.style == User::Style::LOOSE
+      user.style = User::Style::NORMAL
+    elsif user.style == User::Style::NORMAL
+      user.style = User::Style::FIT
+    elsif user.style == User::Style::FIT
+      user.style = User::Style::TIGHT
+    end
+    r = case user.chest_middle_chest_diff
+    when 13..16
+      if user.style == User::Style::LOOSE
+        user.middle_chest + 18
+      elsif user.style == User::Style::NORMAL
+        user.middle_chest + 15
+      elsif user.style == User::Style::FIT
+        user.middle_chest + 12
+      elsif user.style == User::Style::TIGHT
+        user.middle_chest + 9
+      end
+    when 11..12
+      if user.style == User::Style::LOOSE
+        user.middle_chest + 15
+      elsif user.style == User::Style::NORMAL
+        user.middle_chest + 12
+      elsif user.style == User::Style::FIT
+        user.middle_chest + 9
+      elsif user.style == User::Style::TIGHT
+        user.middle_chest + 9
+      end
+    when 9..10
+      if user.style == User::Style::LOOSE
+        user.middle_chest + 14
+      elsif user.style == User::Style::NORMAL
+        user.middle_chest + 11
+      elsif user.style == User::Style::FIT
+        user.middle_chest + 9
+      elsif user.style == User::Style::TIGHT
+        user.middle_chest + 7
+      end
+    when 5..8
+      if user.style == User::Style::LOOSE
+        user.middle_chest + 13
+      elsif user.style == User::Style::NORMAL
+        user.middle_chest + 10
+      elsif user.style == User::Style::FIT
+        user.middle_chest + 8
+      elsif user.style == User::Style::TIGHT
+        user.middle_chest + 7
+      end
+    when -3..4
+      if user.style == User::Style::LOOSE
+        user.middle_chest + 12
+      elsif user.style == User::Style::NORMAL
+        user.middle_chest + 9
+      elsif user.style == User::Style::FIT
+        user.middle_chest + 8
+      elsif user.style == User::Style::TIGHT
+        user.middle_chest + 7
+      end
+    else
+      user.middle_chest
+    end
+    r
+  end
+
 end

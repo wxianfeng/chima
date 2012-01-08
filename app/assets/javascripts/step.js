@@ -133,6 +133,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadCasualShirt: function(){
+      $.ajax({
+        url: "/welcome/load_casualshirt",
+        type: "GET",
+        success: function(data){
+          if ($("#casualshirt_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeCasualshirtStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_casualshirt",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#casualshirt_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 
