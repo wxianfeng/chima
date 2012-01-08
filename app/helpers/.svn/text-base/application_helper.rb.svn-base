@@ -443,4 +443,57 @@ module ApplicationHelper
     r
   end
 
+  # t-shirt 胸围
+  def show_tshirt_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.chest + 13
+    elsif user.style == User::Style::NORMAL
+      user.chest + 10
+    elsif user.style == User::Style::FIT
+      user.chest + 8
+    elsif user.style == User::Style::TIGHT
+      user.chest + 6
+    end
+    r
+  end
+
+  # t-shirt 腰围
+  def show_tshirt_middle_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.middle_chest - 5
+    elsif user.style == User::Style::NORMAL
+      user.middle_chest - 8
+    elsif user.style == User::Style::FIT
+      user.middle_chest - 10
+    elsif user.style == User::Style::TIGHT
+      user.middle_chest
+    end
+    r
+  end
+
+  # t-shirt 衣长
+  def show_tshirt_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then 65
+    when 162..163 then 66
+    when 164..165 then 66
+    when 166..167 then 66
+    when 168..169 then 67
+    when 170..171 then 68
+    when 172..173 then 69
+    when 174..175 then 70
+    when 176..177 then 71
+    when 178..179 then 72
+    when 181..182 then 73
+    when 182..183 then 74
+    when 184..187 then 75
+    when 188..189 then 76
+    when 190 then 77
+    else
+      65
+    end
+    r
+  end
+
 end

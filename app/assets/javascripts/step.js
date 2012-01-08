@@ -157,6 +157,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadTshirt: function(){
+      $.ajax({
+        url: "/welcome/load_tshirt",
+        type: "GET",
+        success: function(data){
+          if ($("#tshirt_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeTshirtStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_tshirt",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#tshirt_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 
