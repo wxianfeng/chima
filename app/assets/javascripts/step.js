@@ -205,6 +205,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadCoat: function(){
+      $.ajax({
+        url: "/welcome/load_coat",
+        type: "GET",
+        success: function(data){
+          if ($("#coat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeCoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_coat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#coat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

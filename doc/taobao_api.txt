@@ -1,6 +1,9 @@
 baihui 项目地址:
 https://pm.baihui.com
 
+英文词汇:
+https://writer.zoho.com/index.do?docId=169650000000019001&author=bladpeter
+
 
 api 调用详解
 http://open.taobao.com/doc/detail.htm?spm=1.41867.77354.5&id=105

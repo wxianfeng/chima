@@ -460,13 +460,13 @@ module ApplicationHelper
   # t-shirt 腰围
   def show_tshirt_middle_chest(user)
     r = if user.style == User::Style::LOOSE
-      user.middle_chest - 5
+      show_tshirt_chest(user) - 5
     elsif user.style == User::Style::NORMAL
-      user.middle_chest - 8
+      show_tshirt_chest(user) - 8
     elsif user.style == User::Style::FIT
-      user.middle_chest - 10
+      show_tshirt_chest(user) - 10
     elsif user.style == User::Style::TIGHT
-      user.middle_chest
+      show_tshirt_chest(user)
     end
     r
   end
@@ -531,6 +531,59 @@ module ApplicationHelper
     when 190 then 79
     else
       65
+    end
+    r
+  end
+
+  # 羽绒服 胸围
+  def show_coat_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.chest + 24
+    elsif user.style == User::Style::NORMAL
+      user.chest + 20
+    elsif user.style == User::Style::FIT
+      user.chest + 16
+    elsif user.style == User::Style::TIGHT
+      user.chest + 12
+    end
+    r
+  end
+
+  # 羽绒服 腰围
+  def show_coat_middle_chest(user)
+    r = if user.style == User::Style::LOOSE
+      show_coat_chest(user) - 5
+    elsif user.style == User::Style::NORMAL
+      show_coat_chest(user) - 5
+    elsif user.style == User::Style::FIT
+      show_coat_chest(user) - 6
+    elsif user.style == User::Style::TIGHT
+      show_coat_chest(user)
+    end
+    r
+  end
+
+  # 羽绒服 衣长
+  def show_coat_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then "60-86"
+    when 162..163 then "61-87"
+    when 164..165 then "62-88"
+    when 166..167 then "63-89"
+    when 168..169 then "64-90"
+    when 170..171 then "65-91"
+    when 172..173 then "66-92"
+    when 174..175 then "67-93"
+    when 176..177 then "68-94"
+    when 178..179 then "69-95"
+    when 181..182 then "70-96"
+    when 182..183 then "71-97"
+    when 184..187 then "72-98"
+    when 188..189 then "73-99"
+    when 190 then "74-100"
+    else
+      "60-86"
     end
     r
   end

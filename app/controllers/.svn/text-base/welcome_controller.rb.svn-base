@@ -127,6 +127,14 @@ class WelcomeController < ApplicationController
     render :partial => "polo"
   end
 
+  def load_coat
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "coat"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])
