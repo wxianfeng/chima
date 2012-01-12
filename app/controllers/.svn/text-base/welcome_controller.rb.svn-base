@@ -135,6 +135,22 @@ class WelcomeController < ApplicationController
     render :partial => "coat"
   end
 
+  def load_jack
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "jack"
+  end
+
+  def load_waitao
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "waitao"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])

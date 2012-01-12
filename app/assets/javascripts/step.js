@@ -229,6 +229,54 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadJack: function(){
+      $.ajax({
+        url: "/welcome/load_jack",
+        type: "GET",
+        success: function(data){
+          if ($("#jack_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeJackStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_jack",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#jack_content").remove();
+          $("#right_top").after(data);
+        }
+      });
+    },
+    loadWaitao: function(){
+      $.ajax({
+        url: "/welcome/load_waitao",
+        type: "GET",
+        success: function(data){
+          if ($("#waitao_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeWaitaoStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_waitao",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#waitao_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

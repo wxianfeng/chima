@@ -588,4 +588,18 @@ module ApplicationHelper
     r
   end
 
+  # jack 胸围
+  def show_jack_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.chest + 20
+    elsif user.style == User::Style::NORMAL
+      user.chest + 16
+    elsif user.style == User::Style::FIT
+      user.chest + 12
+    elsif user.style == User::Style::TIGHT
+      user.chest + 8
+    end
+    r
+  end
+
 end
