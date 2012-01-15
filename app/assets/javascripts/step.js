@@ -325,6 +325,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadDustcoat: function(){
+      $.ajax({
+        url: "/welcome/load_dustcoat",
+        type: "GET",
+        success: function(data){
+          if ($("#dustcoat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeDustcoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_dustcoat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#dustcoat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

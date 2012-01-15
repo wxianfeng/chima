@@ -167,6 +167,14 @@ class WelcomeController < ApplicationController
     render :partial => "sweater"
   end
 
+  def load_dustcoat
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "dustcoat"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])
