@@ -1,0 +1,60 @@
+<div id="standcoat_content">
+  <div id="xinghao">
+    <div class="styBox_right_top" id="xifu">立领</div>
+    <div class="styBox_right_mid">
+      <div class="xinghao_title">
+        <ul>
+          <li>
+            <span><input id="sx_biaozhuan" onclick="Chima.Step.changeStandcoatStyle('<%= User::Style::LOOSE %>');" type="radio" name="shenxing" <%= 'checked' if @user.style == User::Style::LOOSE %>/></span>
+            <span>宽松</span>
+          </li>
+          <li>
+            <span><input id="sx_shoushen" type="radio" onclick="Chima.Step.changeStandcoatStyle('<%= User::Style::NORMAL %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::NORMAL %>/></span>
+            <span>标准</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeStandcoatStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
+            <span>合体</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeStandcoatStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
+            <span>紧身</span>
+          </li>
+        </ul>
+      </div>
+      <div id="xh_table">
+        <table cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="width01">胸围</td>
+            <td><%= show_suit_chest(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">腰围</td>
+            <td><%= show_suit_middle_chest(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">下摆</td>
+            <td><%= show_suit_xiabai(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">前长</td>
+            <td><%= show_suit_front_length(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">后长</td>
+            <td><%= show_suit_back_length(@user) %></td>
+          </tr>
+          <tr>
+            <td class="width01">肩宽</td>
+            <td><%= @user.shoulder %></td>
+          </tr>
+          <tr>
+            <td class="width01">袖长</td>
+            <td><%= @user.sleeve %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="styBox_right_btm"></div>
+  </div>
+</div>

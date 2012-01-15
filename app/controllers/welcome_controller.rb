@@ -175,6 +175,30 @@ class WelcomeController < ApplicationController
     render :partial => "dustcoat"
   end
 
+  def load_suncoat
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "suncoat"
+  end
+
+  def load_standcoat
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "standcoat"
+  end
+
+  def load_tangcoat
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "tangcoat"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])

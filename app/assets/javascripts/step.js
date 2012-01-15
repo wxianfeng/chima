@@ -349,6 +349,78 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadSuncoat: function(){
+      $.ajax({
+        url: "/welcome/load_suncoat",
+        type: "GET",
+        success: function(data){
+          if ($("#suncoat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeSuncoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_suncoat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#suncoat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
+    },
+    loadStandcoat: function(){
+      $.ajax({
+        url: "/welcome/load_standcoat",
+        type: "GET",
+        success: function(data){
+          if ($("#standcoat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeStandcoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_standcoat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#standcoat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
+    },
+    loadTangcoat: function(){
+      $.ajax({
+        url: "/welcome/load_tangcoat",
+        type: "GET",
+        success: function(data){
+          if ($("#tangcoat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeTangcoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_tangcoat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#tangcoat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 
