@@ -602,4 +602,29 @@ module ApplicationHelper
     r
   end
 
+  # 大衣 衣长
+  def show_overcoat_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then "85"
+    when 162..163 then "86"
+    when 164..165 then "87"
+    when 166..167 then "88"
+    when 168..169 then "89"
+    when 170..171 then "90"
+    when 172..173 then "91"
+    when 174..175 then "92"
+    when 176..177 then "93"
+    when 178..179 then "94"
+    when 180..181 then "95"
+    when 182..183 then "96"
+    when 184..187 then "97"
+    when 188..189 then "98"
+    when 190 then "99"
+    else
+      "85"
+    end
+    r
+  end
+
 end

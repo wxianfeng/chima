@@ -277,6 +277,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadOvercoat: function(){
+      $.ajax({
+        url: "/welcome/load_overcoat",
+        type: "GET",
+        success: function(data){
+          if ($("#overcoat_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeOvercoatStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_overcoat",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#overcoat_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 
