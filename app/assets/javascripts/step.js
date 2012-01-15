@@ -301,6 +301,30 @@
           $("#right_top").after(data);
         }
       });
+    },
+    loadSweater: function(){
+      $.ajax({
+        url: "/welcome/load_sweater",
+        type: "GET",
+        success: function(data){
+          if ($("#sweater_content").length != 0)
+            return;
+          $("#right_top").after(data);
+        }
+      });
+    },
+    changeSweaterStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_sweater",
+        type: "GET",
+        data: {
+          'style': style
+        },
+        success: function(data){
+          $("#sweater_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

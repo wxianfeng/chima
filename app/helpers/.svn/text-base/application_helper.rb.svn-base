@@ -627,4 +627,43 @@ module ApplicationHelper
     r
   end
 
+  # 毛衫 胸围
+  def show_sweater_chest(user)
+    r = if user.style == User::Style::LOOSE
+      user.chest + 9
+    elsif user.style == User::Style::NORMAL
+      user.chest + 7
+    elsif user.style == User::Style::FIT
+      user.chest + 5
+    elsif user.style == User::Style::TIGHT
+      user.chest + 3
+    end
+    r
+  end
+
+  # 毛衫 衣长
+  def show_sweater_length(user)
+    height = user.height.value
+    r = case height
+    when 160..161 then "58-64"
+    when 162..163 then "58-64"
+    when 164..165 then "59-65"
+    when 166..167 then "59-65"
+    when 168..169 then "60-66"
+    when 170..171 then "60-66"
+    when 172..173 then "61-67"
+    when 174..175 then "61-67"
+    when 176..177 then "62-68"
+    when 178..179 then "62-68"
+    when 180..181 then "63-69"
+    when 182..183 then "63-69"
+    when 184..187 then "64-70"
+    when 188..189 then "64-70"
+    when 190 then "65-71"
+    else
+      "58-64"
+    end
+    r
+  end
+
 end

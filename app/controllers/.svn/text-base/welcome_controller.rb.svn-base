@@ -159,6 +159,14 @@ class WelcomeController < ApplicationController
     render :partial => "overcoat"
   end
 
+  def load_sweater
+    if params[:style]
+      @user.style = params[:style]
+      @user.save
+    end
+    render :partial => "sweater"
+  end
+
   protected
   def find_user
     @user = User.find_by_visitor_id(cookies[:visitor_id])
