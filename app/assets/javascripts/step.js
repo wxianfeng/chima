@@ -67,9 +67,12 @@
         url: "/welcome/load_xifu",
         type: 'GET',
         success: function(data){
-          if ($("#xifu").length != 0)
+          if ($("#xifu_content").length != 0){
             return;
-          $("#right_top").after(data);
+          }else{
+            $("#right_top").next().remove();
+            $("#right_top").after(data);
+          }
         }
       });
     },
@@ -93,6 +96,7 @@
         success: function(data){
           if ($("#xiku_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -117,6 +121,7 @@
         success: function(data){
           if ($("#dressshirt_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -141,6 +146,7 @@
         success: function(data){
           if ($("#casualshirt_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -165,6 +171,7 @@
         success: function(data){
           if ($("#tshirt_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -189,6 +196,7 @@
         success: function(data){
           if ($("#polo_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -213,6 +221,7 @@
         success: function(data){
           if ($("#coat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -237,6 +246,7 @@
         success: function(data){
           if ($("#jack_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -261,6 +271,7 @@
         success: function(data){
           if ($("#waitao_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -285,6 +296,7 @@
         success: function(data){
           if ($("#overcoat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -309,6 +321,7 @@
         success: function(data){
           if ($("#sweater_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -333,6 +346,7 @@
         success: function(data){
           if ($("#dustcoat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -357,6 +371,7 @@
         success: function(data){
           if ($("#suncoat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -381,6 +396,7 @@
         success: function(data){
           if ($("#standcoat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });
@@ -405,6 +421,7 @@
         success: function(data){
           if ($("#tangcoat_content").length != 0)
             return;
+          $("#right_top").next().remove();
           $("#right_top").after(data);
         }
       });

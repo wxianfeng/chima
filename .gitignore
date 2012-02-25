@@ -11,3 +11,4 @@ db/schema.rb
 public/assets/
 tmp/
 .sass-cache/
+.code_swarm/
