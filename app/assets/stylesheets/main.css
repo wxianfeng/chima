@@ -98,7 +98,7 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 /* six */
 .textBox span.pinpai_title{float:left; margin-right:15px;}
 .textBox span.pinpai_select{width:140px; height:22px; line-height:22px; padding:0 27px 0 3px; border:1px solid #599696; background:#ffffff url(/assets/sel_2.png) no-repeat right; margin-top:3px; float:left;}
-.textBox ul.pinpai_select_ex{width:170px; border:1px solid #599696; position:absolute; z-index:3; background:#ffffff; margin-top:26px; margin-left:49px; display:none;}
+.textBox ul.pinpai_select_ex{width:170px; border:1px solid #599696; position:absolute; z-index:3; background:#ffffff; margin-top:26px; margin-left:49px; display:none;height:400px;overflow: auto;}
 .textBox ul.pinpai_select_ex li{list-style:none; widows:170px;}
 .textBox ul.pinpai_select_ex li a{width:164px; height:22px; line-height:22px; display:block; text-decoration:none; padding:0 3px; color:#000000;}
 .textBox ul.pinpai_select_ex li a:hover{background:#80b0a4; color:#ffffff;}
