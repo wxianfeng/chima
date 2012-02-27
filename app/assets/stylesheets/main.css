@@ -41,7 +41,7 @@ div,table,tr,th,td,ul,li,ol{margin:0; padding:0; overflow:hidden;}
 .bd_block span.b_sele{width:125px; height:17px; padding-left:5px; line-height:17px; display:block; padding-right:21px; overflow:hidden; border:1px solid #3c3c37; background:url(/assets/sel_1.png) no-repeat right; margin-right:5px; margin-top:3px;}
 .bd_block span.b_dwei{font-size:11px;}
 
-.bd_block ul.b_sele_ex{width:151px; display:block; overflow:hidden; border:1px solid #3c3c37; position:absolute; background:#f0f0de; margin-top:21px; margin-left:38px; _margin-left:-218px; z-index:3; display:none;}
+.bd_block ul.b_sele_ex{width:151px; display:block; overflow:auto; border:1px solid #3c3c37; position:absolute; background:#f0f0de; margin-top:21px; margin-left:38px; _margin-left:-218px; z-index:3; display:none;height:300px;}
 .bd_block ul.b_sele_ex li{list-style:none; line-height:20px;}
 .bd_block ul.b_sele_ex li a{width:141px; height:20px; display:block; padding:0 5px; color:#000000; text-decoration:none;}
 .bd_block ul.b_sele_ex li a:hover{background:#666666; color:#eeeeee;}
