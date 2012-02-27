@@ -130,6 +130,9 @@ user_forecasts 用户预估尺寸(计算出的数据)
   crosspiece decimal(10,2) 横档
   foot decimal(10,2) 脚长
   knee decimal(10,2) 膝围
+  lap  decimal(10,2) 下摆
+  front_length decimal(10,1) 前长
+  back_length decimal(10,1) 后长
 
 
 
