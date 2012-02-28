@@ -1,3 +1,4 @@
+<% brand = calc_brand[0] %>
 <div class="layout layout_ex">
   <div class="main">
     <div class="header">
@@ -40,21 +41,25 @@
         <div class="styBox_right">
           <div class="textBox fontSize_02 color_01 margin_04 padding_01">最佳尺寸/型号</div>
           <div id="xinghao">
-            <div class="styBox_right_top">牛仔裤</div>
+            <div class="styBox_right_top">西服</div>
             <div class="styBox_right_mid">
               <div class="xinghao_title">
                 <ul>
                   <li>
-                    <span><input id="sx_biaozhuan" type="checkbox" name="shenxing" /></span>
+                    <span><input id="sx_biaozhuan" onclick="Chima.Step.changeOvercoatStyle('<%= User::Style::LOOSE %>');" type="radio" name="shenxing" <%= 'checked' if @user.style == User::Style::LOOSE %>/></span>
+                    <span>宽松</span>
+                  </li>
+                  <li>
+                    <span><input id="sx_shoushen" type="radio" onclick="Chima.Step.changeOvercoatStyle('<%= User::Style::NORMAL %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::NORMAL %>/></span>
                     <span>标准</span>
                   </li>
                   <li>
-                    <span><input id="sx_shoushen" type="checkbox" name="shenxing" /></span>
-                    <span>瘦身</span>
+                    <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeOvercoatStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
+                    <span>合体</span>
                   </li>
                   <li>
-                    <span><input id="sx_kuansong" type="checkbox" name="shenxing" /></span>
-                    <span>宽松</span>
+                    <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeOvercoatStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
+                    <span>紧身</span>
                   </li>
                 </ul>
               </div>
@@ -66,19 +71,9 @@
                     <td>型号</td>
                   </tr>
                   <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><%= brand.item.name %></td>
+                    <td><%= brand.size.name %></td>
+                    <td><%= brand.model.name %></td>
                   </tr>
                 </table>
               </div>

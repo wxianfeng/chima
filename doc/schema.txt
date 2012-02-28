@@ -119,13 +119,12 @@ user_forecasts 用户预估尺寸(计算出的数据)
   category_id 分类
   style 身材类型
   chest decimal(10,2) 胸围
-  middle_chest decimal(10,2) 中腰围
+  middle_chest decimal(10,2) 腰围
   shoulder decimal(10,2) 肩宽
   sleeve decimal(10,2) 袖长
   neck decimal(10,2) 领围
   arm decimal(10,2) 臂围
   wrist  decimal(10,2) 腕围
-  down_chest  decinmal(10,2) 腰围
   ass decimal(10,2) 臀围
   crosspiece decimal(10,2) 横档
   foot decimal(10,2) 脚长

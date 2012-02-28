@@ -179,4 +179,104 @@ module SuitHelper
     r
   end
 
+  #  ruby-1.9.2-p290 :033 > {"a"=>2,"b"=>3,"4"=>1}.max
+  # => ["b", 3]
+  def calc_brand
+    forecast = UserForecast.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"],:user_id=>current_user.id,:style=>current_user.style).last
+    return [] if forecast.nil?
+    suits = UpSize.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"])
+    hsh = {}
+    suits.each do |suit|
+      chest_score = calc_chest(forecast,suit)
+      middle_chest_score = calc_middle_chest(forecast,suit)
+      lap_score = calc_lap(forecast,suit)
+      front_score = calc_front_length(forecast,suit)
+      back_score = calc_back_length(forecast,suit)
+      score = chest_score + middle_chest_score + lap_score + front_score + back_score
+      hsh.merge!({ suit => score })
+    end
+    hsh.max
+  end
+
+  def calc_chest(forecast,suit)
+    score = (forecast.chest - suit.chest).abs.to_i
+    r = case score
+    when 8..1000 then 0
+    when 7 then 30/8
+    when 6 then 60/8
+    when 5 then 90/8
+    when 4 then 120/8
+    when 3 then 150/8
+    when 2 then 180/8
+    when 1 then 210/8
+    when 0 then 240/8
+    end
+    r
+  end
+
+  def calc_middle_chest(forecast,suit)
+    score = (forecast.middle_chest - suit.waistline).abs.to_i
+    r = case score
+    when 10..1000 then 0
+    when 9 then 20/10
+    when 8 then 40/10
+    when 7 then 60/10
+    when 6 then 80/10
+    when 5 then 100/10
+    when 4 then 120/10
+    when 3 then 140/10
+    when 2 then 160/10
+    when 1 then 180/10
+    when 0 then 200/10
+    end
+    r
+  end
+
+  def calc_lap(forecast,suit)
+    return 0 if forecast.lap.nil? or suit.lap.nil?
+    score = (forecast.lap - suit.lap).abs.to_i
+    r = case score
+    when 10..1000 then 0
+    when 9 then 5/10
+    when 8 then 10/10
+    when 7 then 15/10
+    when 6 then 20/10
+    when 5 then 25/10
+    when 4 then 30/10
+    when 3 then 35/10
+    when 2 then 40/10
+    when 1 then 45/10
+    when 0 then 50/10
+    end
+    r
+  end
+
+  def calc_front_length(forecast,suit)
+    return 0 if forecast.front_length.nil? or suit.front_length.nil?
+    score = (forecast.front_length - suit.front_length).abs.to_i
+    r = case score
+    when 5..1000 then 0
+    when 4 then 15/5
+    when 3 then 30/5
+    when 2 then 45/5
+    when 1 then 60/5
+    when 0 then 75/5
+    end
+    r
+  end
+
+  def calc_back_length(forecast,suit)
+    return 0 if forecast.back_length.nil? or suit.back_length.nil?
+    score = (forecast.back_length - suit.back_length).abs.to_i
+    r = case score
+    when 5..1000 then 0
+    when 4 then 15/5
+    when 3 then 30/5
+    when 2 then 45/5
+    when 1 then 60/5
+    when 0 then 75/5
+    end
+    r
+  end
+
 end
