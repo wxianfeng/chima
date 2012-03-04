@@ -194,8 +194,12 @@ module SuitHelper
       back_score = calc_back_length(forecast,suit)
       score = chest_score + middle_chest_score + lap_score + front_score + back_score
       hsh.merge!({ suit => score })
-      Rails.logger.debug "debug #{score}"
     end
+    rehash = {}
+    hsh.each do |k,v|
+      rehash[k.id] = v
+    end
+    Rails.logger.info "debug #{rehash}"
     hsh.max_by {|a| a[1] }
   end
 
