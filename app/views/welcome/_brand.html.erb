@@ -1,0 +1,43 @@
+<% brand = calc_brand[0] %>
+<div id="brand_content">
+  <div id="xinghao">
+    <div class="styBox_right_top">西服</div>
+    <div class="styBox_right_mid">
+      <div class="xinghao_title">
+        <ul>
+          <li>
+            <span><input id="sx_biaozhuan" onclick="Chima.Step.changeBrandStyle('<%= User::Style::LOOSE %>');" type="radio" name="shenxing" <%= 'checked' if @user.style == User::Style::LOOSE %>/></span>
+            <span>宽松</span>
+          </li>
+          <li>
+            <span><input id="sx_shoushen" type="radio" onclick="Chima.Step.changeBrandStyle('<%= User::Style::NORMAL %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::NORMAL %>/></span>
+            <span>标准</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeBrandStyle('<%= User::Style::FIT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::FIT %>/></span>
+            <span>合体</span>
+          </li>
+          <li>
+            <span><input id="sx_kuansong" type="radio" onclick="Chima.Step.changeBrandStyle('<%= User::Style::TIGHT %>');" name="shenxing" <%= 'checked' if @user.style == User::Style::TIGHT %>/></span>
+            <span>紧身</span>
+          </li>
+        </ul>
+      </div>
+      <div id="xh_table">
+        <table cellpadding="0" cellspacing="0">
+          <tr id="xh_th">
+            <td>货号</td>
+            <td>尺码</td>
+            <td>型号</td>
+          </tr>
+          <tr>
+            <td><%= brand.item.name %></td>
+            <td><%= brand.size.name %></td>
+            <td><%= brand.model.name %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="styBox_right_btm"></div>
+  </div>
+</div>

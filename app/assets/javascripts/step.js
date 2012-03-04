@@ -438,6 +438,17 @@
           $("#right_top").after(data);
         }
       });
+    },
+    changeBrandStyle: function(style){
+      $.ajax({
+        url: "/welcome/load_brand",
+        type: "GET",
+        data: { 'style': style },
+        success: function(data){
+          $("#brand_content").remove();
+          $("#right_top").after(data);
+        }
+      });
     }
   };
 

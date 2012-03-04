@@ -196,7 +196,6 @@ module SuitHelper
       hsh.merge!({ suit => score })
       Rails.logger.debug "debug #{score}"
     end
-    Rails.logger.debug "debug #{hsh.max}"
     hsh.max_by {|a| a[1] }
   end
 
