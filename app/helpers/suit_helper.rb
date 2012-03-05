@@ -179,8 +179,6 @@ module SuitHelper
     r
   end
 
-  #  ruby-1.9.2-p290 :033 > {"a"=>2,"b"=>3,"4"=>1}.max
-  # => ["b", 3]
   def calc_brand
     forecast = UserForecast.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"],:user_id=>current_user.id,:style=>current_user.style).last
     Rails.logger.info "info forecast #{forecast.inspect}"
@@ -205,7 +203,7 @@ module SuitHelper
   end
 
   def calc_chest(forecast,suit)
-    score = (forecast.chest - suit.chest).abs.to_i
+    score = (forecast.chest - suit.chest).abs.to_f
     r = case score
     when 8..1000 then 0
     when 7 then 30/8
@@ -221,7 +219,7 @@ module SuitHelper
   end
 
   def calc_middle_chest(forecast,suit)
-    score = (forecast.middle_chest - suit.waistline).abs.to_i
+    score = (forecast.middle_chest - suit.waistline).abs.to_f
     r = case score
     when 10..1000 then 0
     when 9 then 20/10
@@ -240,7 +238,7 @@ module SuitHelper
 
   def calc_lap(forecast,suit)
     return 0 if forecast.lap.nil? or suit.lap.nil?
-    score = (forecast.lap - suit.lap).abs.to_i
+    score = (forecast.lap - suit.lap).abs.to_f
     r = case score
     when 10..1000 then 0
     when 9 then 5/10
@@ -259,7 +257,7 @@ module SuitHelper
 
   def calc_front_length(forecast,suit)
     return 0 if forecast.front_length.nil? or suit.front_length.nil?
-    score = (forecast.front_length - suit.front_length).abs.to_i
+    score = (forecast.front_length - suit.front_length).abs.to_f
     r = case score
     when 5..1000 then 0
     when 4 then 15/5
@@ -273,7 +271,7 @@ module SuitHelper
 
   def calc_back_length(forecast,suit)
     return 0 if forecast.back_length.nil? or suit.back_length.nil?
-    score = (forecast.back_length - suit.back_length).abs.to_i
+    score = (forecast.back_length - suit.back_length).abs.to_f
     r = case score
     when 5..1000 then 0
     when 4 then 15/5
