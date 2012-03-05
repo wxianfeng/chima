@@ -181,16 +181,15 @@ module SuitHelper
 
   def calc_brand
     forecast = UserForecast.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"],:user_id=>current_user.id,:style=>current_user.style).last
-    Rails.logger.info "info forecast #{forecast.inspect}"
     return [] if forecast.nil?
     suits = UpSize.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"])
     hsh = {}
     suits.each do |suit|
-      chest_score = calc_chest(forecast,suit)
-      middle_chest_score = calc_middle_chest(forecast,suit)
-      lap_score = calc_lap(forecast,suit)
-      front_score = calc_front_length(forecast,suit)
-      back_score = calc_back_length(forecast,suit)
+      chest_score = calc_chest(forecast,suit) || 0
+      middle_chest_score = calc_middle_chest(forecast,suit) || 0
+      lap_score = calc_lap(forecast,suit) || 0
+      front_score = calc_front_length(forecast,suit) || 0
+      back_score = calc_back_length(forecast,suit) || 0
       score = chest_score + middle_chest_score + lap_score + front_score + back_score
       hsh.merge!({ suit => score })
     end
@@ -198,11 +197,11 @@ module SuitHelper
     hsh.each do |k,v|
       rehash[k.id] = v
     end
-    Rails.logger.info "info #{rehash}"
     hsh.max_by {|a| a[1] }
   end
 
   def calc_chest(forecast,suit)
+    return 0 if forecast.chest.nil? or suit.chest.nil?
     score = (forecast.chest - suit.chest).abs.to_f
     r = case score
     when 8..1000 then 0
@@ -219,6 +218,7 @@ module SuitHelper
   end
 
   def calc_middle_chest(forecast,suit)
+    return 0 if forecast.middle_chest.nil? or suit.waistline.nil?
     score = (forecast.middle_chest - suit.waistline).abs.to_f
     r = case score
     when 10..1000 then 0
