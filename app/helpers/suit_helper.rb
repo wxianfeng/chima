@@ -183,6 +183,7 @@ module SuitHelper
   # => ["b", 3]
   def calc_brand
     forecast = UserForecast.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"],:user_id=>current_user.id,:style=>current_user.style).last
+    Rails.logger.info "info forecast #{forecast.inspect}"
     return [] if forecast.nil?
     suits = UpSize.where(:category_id=>UpSize::M_TYPES.invert["西服上衣"])
     hsh = {}
@@ -199,7 +200,7 @@ module SuitHelper
     hsh.each do |k,v|
       rehash[k.id] = v
     end
-    Rails.logger.info "debug #{rehash}"
+    Rails.logger.info "info #{rehash}"
     hsh.max_by {|a| a[1] }
   end
 
